@@ -1,6 +1,6 @@
 * { margin: 0px; padding: 0px; text-decoration: none; list-style: none; font-family: Cambria; }
 
-h1 { float: left; }
+h1 { float: left; width: 100%; }
 p { float: left; }
 
 /* GENERAL STYLING */
@@ -35,8 +35,15 @@ p { float: left; }
 
 #footer { float: left; width: 100%; height: 30px; text-align: center;  }
 #footer p { width: 100%; line-height: 30px; }
-
 /* END GENERAL STYLING */
+
+
+
+
+
+
+
+
 /* PRODUCTS */
 #content .prodBox {
 	width: 680px;
@@ -46,7 +53,7 @@ p { float: left; }
 	border-bottom: 1px dotted #ccc;
 }
 
-#content .prodBox img { margin: 10px; }
+#content .prodBox img { margin: 10px 10px 10px 0px; }
 #content .prodBox p { float: none; padding: 7px; }
 
 #content .prodBox .prodBoxInfo {
@@ -75,6 +82,27 @@ p { float: left; }
 	height: 25px;
 	margin-top: 2px;
 	margin-right: 10px;
-} 
+}
+
+#content #left {
+	float: left;
+	width: 249px;
+	margin: 10px 25px 0px 0px;
+	padding-right: 25px;
+	border-right: 1px dotted #ccc;
+	height: 100%;
+}
+
+#content #left ul { margin-top: 10px; }
+#content #left ul li:hover { background: #f4f4f4; cursor: pointer; }
+#content #left ul li {
+	height: 40px;
+	display: block;
+	border-bottom: 1px dotted #ccc;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+#content #right { float: right; width: 680px; }
 
 /* END PRODUCTS */
