@@ -42,4 +42,89 @@
 			}
 		}
 	}
+
+	class createUser {
+		private $db;
+
+		// create db connection
+		public function __construct() {
+			$this->db = new Connection();
+			$this->db = $this->db->dbConnect();
+		}
+
+		public function create($username, $password, $name, $email, $userimage){
+
+			$object = new error();
+  			$object->checkErrors($username, $password, $name, $email);
+
+  			$object = new checkUser();
+  			$object->check($username);
+
+			if(!empty($username) && !empty($password) && !empty($name) && !empty($email) !isset($reg_error)) {
+					$register = $this->db->prepare("INSERT INTO user(username, password, name, email, userimage) VALUES('?', '?', '?', '?', '?')");
+					$register->bindParam(1, $username);
+					$register->bindParam(2, $password);
+					$register->bindParam(3, $name);
+					$register->bindParam(4, $email);
+					$register->bindParam(5, $userimage);
+					$register->execute();
+
+					// if correct creation, set unic session cookie and login new user
+					for($unicnewid=1; $unicnewid <> 9999999; unicnewid++) {
+						$hashnewid = md5($unicnewid);
+						return $hashnewid;
+					}
+					$_SESSION['sess_id'] = $hashnewid;
+					$_SESSION['sess_user'] = $username; 
+					setcookie("user", $username);
+					// change to correct path
+					header("Location: profile.php");
+			}
+		}
+	}
+
+	class checkUser extends createUser {
+		private $db;
+
+		// create db connection
+		public function __construct() {
+			$this->db = new Connection();
+			$this->db = $this->db->dbConnect();
+		}
+
+		protected function check($username) {
+
+			// Check if username is taken
+			$checkUserName = $this->db->prepare("SELECT COUNT(*) FROM user WHERE username=?");
+			$checkUserName->bindParam(1, $username);
+			$checkUserName->execute();
+		  	 
+		  	if ($checkUserName, 0) > 0) { 
+		    	$reg_error[] = 1; 
+		  	} 
+
+		}
+
+	}
+
+	class error extends createUser {
+
+		protected function checkErrors() {
+
+			// Check if any blank fields
+			if (empty($username) || empty($password) || empty($name) || empty($email) { 
+			    $reg_error[] = 0; 
+			} 
+	  		
+	  		// Check if emailaddress seems to be ok 
+			if (!preg_match('/^[-A-Za-z0-9_.]+[@][A-Za-z0-9_-]+([.][A-Za-z0-9_-]+)*[.][A-Za-z]{2,6}$/', $email)) { 
+				$reg_error[] = 2;    
+			}
+
+			// Sätt variabler för tomt formulär 
+			for ($i=0; $i<4; $i++) { 
+				$back[$i] = ""; 
+			} 
+		}
+	}
 ?>
