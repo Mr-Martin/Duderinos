@@ -23,10 +23,11 @@
 
 				if($st->rowCount() == 1) {
 					// if correct login, set unic session cookie and goto
-					for($unicid=1; $unicid < 9999999; unicid++) {
-						return $unicid;
+					for($unicid=1; $unicid <> 9999999; unicid++) {
+						$hashid = md5($unicid);
+						return $hashid;
 					}
-					$_SESSION['sess_id'] = $unicid;
+					$_SESSION['sess_id'] = $hashid;
 					$_SESSION['sess_user'] = $username; 
 					setcookie("user", $username);
 					// change to correct path
