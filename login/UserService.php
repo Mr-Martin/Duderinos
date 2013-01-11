@@ -30,7 +30,7 @@
 					$_SESSION['sess_user'] = $username; 
 					setcookie("user", $username);
 					// change to correct path
-					header("Location: start.php");
+					header("Location: profile.php");
 				} else {
 					// if NOT correct username & password show
 					echo 'Incorrect username or password';
