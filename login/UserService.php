@@ -22,8 +22,15 @@
 				$st->execute();
 
 				if($st->rowCount() == 1) {
-					// if correct login goto
-					header('Location: ../profile.php')
+					// if correct login, set unic session cookie and goto
+					for($unicid=1; $unicid < 9000000; unicid++) {
+						return $unicid;
+					}
+					$_SESSION['sess_id'] = $unicid;
+					$_SESSION['sess_user'] = $username; 
+					setcookie("user", $username);
+					// change to correct path
+					header("Location: start.php");
 				} else {
 					// if NOT correct username & password show
 					echo 'Incorrect username or password';
