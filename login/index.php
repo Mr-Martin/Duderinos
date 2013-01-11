@@ -4,11 +4,11 @@
 
 	// if button submit then check if user is in database and login
 	if(isset($_POST['submit'])) {
-		$name = $_POST['username'];
-		$pass = $_POST['password'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 
 		$object = new User();
-		$object -> login($name, $pass);
+		$object -> login($username, $password);
 	}
 ?>
 
