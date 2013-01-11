@@ -16,14 +16,14 @@
 		public function login($username, $password) {
 			// if username and password is not empty then search for username and password and login.
 			if(!empty($username) && !empty($password)) {
-				$st = $this->db->prepare("SELECT * FROM users WHERE username=? AND password=?");
+				$st = $this->db->prepare("SELECT * FROM user WHERE userName=? AND password=?");
 				$st->bindParam(1, $username);
 				$st->bindParam(2, $password);
 				$st->execute();
 
 				if($st->rowCount() == 1) {
 					// if correct login, set unic session cookie and goto
-					for($unicid=1; $unicid < 9000000; unicid++) {
+					for($unicid=1; $unicid < 9999999; unicid++) {
 						return $unicid;
 					}
 					$_SESSION['sess_id'] = $unicid;
