@@ -12,13 +12,26 @@
 			$this->db = $this->db->dbConnect();
 		}
 
+		// safe handle of inputed username & password
+		protected function safestrip($string){
+       		$string = strip_tags($string);
+       		$string = mysql_real_escape_string($string);
+       		return $string;
+		}
+
+
 		// function take two vars, if not empty select from database and return 1 row.
 		public function login($username, $password) {
+
+			// call function safestrip
+			$user = safestrip($username);
+			$pass = safestrip($password);
+
 			// if username and password is not empty then search for username and password and login.
-			if(!empty($username) && !empty($password)) {
+			if(!empty($user) && !empty($pass)) {
 				$st = $this->db->prepare("SELECT * FROM user WHERE userName=? AND password=?");
-				$st->bindParam(1, $username);
-				$st->bindParam(2, $password);
+				$st->bindParam(1, $user);
+				$st->bindParam(2, $pass);
 				$st->execute();
 
 				if($st->rowCount() == 1) {
@@ -28,8 +41,8 @@
 						return $hashid;
 					}
 					$_SESSION['sess_id'] = $hashid;
-					$_SESSION['sess_user'] = $username; 
-					setcookie("user", $username);
+					$_SESSION['sess_user'] = $user; 
+					setcookie("user", $user);
 					// change to correct path
 					header("Location: profile.php");
 				} else {
