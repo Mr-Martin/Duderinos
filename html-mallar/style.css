@@ -172,4 +172,41 @@ p { float: left; }
 	width: 138px;
 	float: left;
 	border: 1px solid black;
-	
+}	
+
+/* PAYMENT */
+
+#content .buyBox {
+	width: 680px;
+	float: right;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #ccc;
+}
+#content .buyBox img { margin: 10px 10px 10px 0px; }
+#content .buyBox p { float: none; padding: 7px; }
+
+#content #buyLeft {
+	float: left;
+	width: 249px;
+	margin: 10px 25px 0px 0px;
+	padding-right: 25px;
+	height: 100%;
+	border-right: 1px dotted #ccc;
+}
+
+#content #buyLeft ul { margin-top: 10px; }
+#content #buyLeft ul li {
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+#content #buyLeft #showCart {
+	float: left;
+}
+
+#content #buyRight { float: right; width: 680px; }
+
+/* END PAYMENT */

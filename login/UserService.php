@@ -12,20 +12,8 @@
 			$this->db = $this->db->dbConnect();
 		}
 
-		// safe handle of inputed username & password
-		protected function safestrip($string){
-       		$string = strip_tags($string);
-       		$string = mysql_real_escape_string($string);
-       		return $string;
-		}
-
-
 		// function take two vars, if not empty select from database and return 1 row.
 		public function login($username, $password) {
-
-			// call function safestrip
-			$user = safestrip($username);
-			$pass = safestrip($password);
 
 			// if username and password is not empty then search for username and password and login.
 			if(!empty($user) && !empty($pass)) {
@@ -36,10 +24,11 @@
 
 				if($st->rowCount() == 1) {
 					// if correct login, set unic session cookie and goto
-					for($unicid=1; $unicid <> 9999999; unicid++) {
+					for($unicid=1; $unicid < 999999999; $unicid++) {
 						$hashid = md5($unicid);
 						return $hashid;
 					}
+
 					$_SESSION['sess_id'] = $hashid;
 					$_SESSION['sess_user'] = $user; 
 					setcookie("user", $user);
@@ -65,7 +54,7 @@
 			$this->db = $this->db->dbConnect();
 		}
 
-		public function create($username, $password, $name, $email, $userimage){
+		public function create($username, $password, $name, $email, $userimage) {
 
 			$object = new error();
   			$object->checkErrors($username, $password, $name, $email);
@@ -73,7 +62,7 @@
   			$object = new checkUser();
   			$object->check($username);
 
-			if(!empty($username) && !empty($password) && !empty($name) && !empty($email) !isset($reg_error)) {
+			if(!empty($username) && !empty($password) && !empty($name) && !empty($email)) {
 					$register = $this->db->prepare("INSERT INTO user(username, password, name, email, userimage) VALUES('?', '?', '?', '?', '?')");
 					$register->bindParam(1, $username);
 					$register->bindParam(2, $password);
@@ -83,7 +72,7 @@
 					$register->execute();
 
 					// if correct creation, set unic session cookie and login new user
-					for($unicnewid=1; $unicnewid <> 9999999; unicnewid++) {
+					for($unicnewid=1; $unicnewid <> 9999999; $unicnewid++) {
 						$hashnewid = md5($unicnewid);
 						return $hashnewid;
 					}
@@ -111,10 +100,10 @@
 			$checkUserName = $this->db->prepare("SELECT COUNT(*) FROM user WHERE username=?");
 			$checkUserName->bindParam(1, $username);
 			$checkUserName->execute();
-		  	 
-		  	if ($checkUserName, 0) > 0) { 
-		    	$reg_error[] = 1; 
-		  	} 
+
+			if ($reg_error->rowCount($checkUserName, 0) > 0) {
+				$reg_error[] = 1;
+			}
 
 		}
 
@@ -125,7 +114,7 @@
 		protected function checkErrors() {
 
 			// Check if any blank fields
-			if (empty($username) || empty($password) || empty($name) || empty($email) { 
+			if (empty($username) || empty($password) || empty($name) || empty($email)) { 
 			    $reg_error[] = 0; 
 			} 
 	  		

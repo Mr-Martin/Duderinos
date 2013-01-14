@@ -1,25 +1,31 @@
+<?php
+	$pagetitle = 'Payment Checkout';
+?>
 <html>
 	<head>
-		<title></title>
+		<title><?php echo $pagetitle; ?></title>
 	</head>
 	<body>
 
 <!-- START OF PAYMENT -->
 		<form id="buy-form" method="post" action="">
         	
-        	<p class="form-label">First Name:</p>
+			<p>Product: <?php echo 'product'; ?></p>
+			<p>Price: <?php echo 'price'; ?></p>
+
+        	<p>First Name:</p>
         	<input class="text" id="first-name" name="firstname" spellcheck="false"></input>
 	        
-	        <p class="form-label">Last Name:</p>
+	        <p>Last Name:</p>
 	        <input class="text" id="last-name" name="lastname" spellcheck="false"></input>
 	       	
-	       	<p class="form-label">Email Address:</p>
+	       	<p>Email Address:</p>
 	       	<input class="text" id="email" name="email" spellcheck="false"></input>
 	       
-	        <p class="form-label">Credit Card Number:</p>
+	        <p>Credit Card Number:</p>
 	        <input class="text" id="card-number" name="cardnumber" autocomplete="off"></input>
 	        
-	        <p class="form-label">Expiration Date:</p>
+	        <p>Expiration Date:</p>
 		        <select id="expiration-month" name="expirationmonth">
 		        <option value="1">January</option>
 		        <option value="2">February</option>
@@ -38,7 +44,7 @@
 	        <select id="expiration-year" name="expirationyear">
 	            <?php
 	            	// automatically populates our expiration-year field with the next 20 years
-	               $yearRange = 20;
+	               $yearRange = 10;
 	               $thisYear = date('Y');
 	               $startYear = ($thisYear + $yearRange);
 	               foreach (range($thisYear, $startYear) as $year)
@@ -52,8 +58,8 @@
 	            ?>
 	        </select>
         	
-        	<p class="form-label">CVC:</p>
-        	<input class="text" id="card-security-code" name="cardsecuritycode" autocomplete="off"></input>
+        	<p>CVC:</p>
+        	<input id="card-security-code" name="cardsecuritycode" autocomplete="off"></input>
         	
         	<input id="buy-submit-button" type="submit" name="submit" value="Place This Order »"></input>
     	</form>
