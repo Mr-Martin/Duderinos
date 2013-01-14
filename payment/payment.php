@@ -8,19 +8,19 @@
 		<form id="buy-form" method="post" action="">
         	
         	<p class="form-label">First Name:</p>
-        	<input class="text" id="first-name" spellcheck="false"></input>
+        	<input class="text" id="first-name" name="firstname" spellcheck="false"></input>
 	        
 	        <p class="form-label">Last Name:</p>
-	        <input class="text" id="last-name" spellcheck="false"></input>
+	        <input class="text" id="last-name" name="lastname" spellcheck="false"></input>
 	       	
 	       	<p class="form-label">Email Address:</p>
-	       	<input class="text" id="email" spellcheck="false"></input>
+	       	<input class="text" id="email" name="email" spellcheck="false"></input>
 	       
 	        <p class="form-label">Credit Card Number:</p>
-	        <input class="text" id="card-number" autocomplete="off"></input>
+	        <input class="text" id="card-number" name="cardnumber" autocomplete="off"></input>
 	        
 	        <p class="form-label">Expiration Date:</p>
-		        <select id="expiration-month">
+		        <select id="expiration-month" name="expirationmonth">
 		        <option value="1">January</option>
 		        <option value="2">February</option>
 		        <option value="3">March</option>
@@ -35,7 +35,7 @@
 		        <option value="12">December</option>
 	        </select>
 	        
-	        <select id="expiration-year">
+	        <select id="expiration-year" name="expirationyear">
 	            <?php
 	            	// automatically populates our expiration-year field with the next 20 years
 	               $yearRange = 20;
@@ -53,9 +53,9 @@
 	        </select>
         	
         	<p class="form-label">CVC:</p>
-        	<input class="text" id="card-security-code" autocomplete="off"></input>
+        	<input class="text" id="card-security-code" name="cardsecuritycode" autocomplete="off"></input>
         	
-        	<input id="buy-submit-button" type="submit" value="Place This Order »"></input>
+        	<input id="buy-submit-button" type="submit" name="submit" value="Place This Order »"></input>
     	</form>
 
 <!-- END OF PAYMENT -->
