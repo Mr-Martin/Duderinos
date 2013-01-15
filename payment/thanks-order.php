@@ -22,26 +22,20 @@ class setAmount extends dbConnect{
 			);
 //**//
 
-	  	//Innehållet i POST kommer från payment/index.php
+//		Innehållet i POST kommer från payment/index.php
 		$productID = $_POST['ID'];
 		$productAmount = $_POST['amount'];
 		$productName = $_POST['name'];
 		$productPrice = $_POST['price'];
 		$productStock = $_POST['stock'];
-		
-		//Räkna ut hur många produkter som finns kvar
-		$productStock = $productStock - $productAmount;
 
+//		Räkna ut hur många produkter som finns kvar
+		$productStock = $productStock - $productAmount;
+		
 // Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
-<div class="buyBox">			
 	<p><strong>Orderdetails:</strong></p>
 	<p><?php echo $productName . ", " . $productStock; ?> st<br />
-		Totalprice: <?php echo $productPrice ?> kr</p>
-	<p><strong>Sent to:</strong><br />
-		Test Testsson<br />
-		Stora vägen 99, Storstaden</p>
-	<p>Copy on the order is sent to: email@email.se</p>
-</div>	
+		Totalprice: <?php echo $productPrice ?> kr</p>	
 <?php
 
 // Justera antalet som är kvar i databasen. Detta är inte klart - här ska det göras en UPDATE i databasen så att rätt antal visas.
@@ -49,6 +43,26 @@ class setAmount extends dbConnect{
 	//	$res = mysqli_query($db, $sql);
 	//echo $productAmount;
 	}
+
+public function getUserData(){
+
+//	User information
+	$firstName = $_POST['firstName'];
+	$lastName = $_POST['lastName'];
+	$address = $_POST['address'];
+	$city = $_POST['city'];
+	$email = $_POST['email'];
+?>
+
+<p><strong>Sent to:</strong><br />
+		<?php echo $firstName." ".$lastName; ?><br />
+		<?php echo $address . ", " . $city; ?></p>
+	<p>Copy on the order is sent to: <?php echo $email; ?></p>
+
+<?php
+	}
+
+
 }
  
 
@@ -85,7 +99,10 @@ class setAmount extends dbConnect{
 				</div>
 
 				<div id="buyRight">
-					<?php $setAmount = new setAmount(); ?>
+					<div class="buyBox">			
+						<?php $setAmount = new setAmount(); ?>
+						<?php $getUserData = $setAmount->getUserData(); ?>
+					</div>
 				</div>
 			</div>
 		</div>

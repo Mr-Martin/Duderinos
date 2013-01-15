@@ -167,11 +167,11 @@ $productID = $getID->getID();
 							<tr>
 								<td>
 									<p>First Name: <br />
-			        				<input class="text" id="first-name" name="firstname" spellcheck="false"></p>
+			        				<input class="text" id="firstName" name="firstName" spellcheck="false"></p>
 								</td>
 								<td>
 									<p>Last Name: <br />
-				        			<input class="text" id="last-name" name="lastname" spellcheck="false"></p>
+				        			<input class="text" id="lastName" name="lastName" spellcheck="false"></p>
 								</td>
 							</tr>
 			        		<tr>
