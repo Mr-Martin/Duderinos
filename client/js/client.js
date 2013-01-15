@@ -83,7 +83,7 @@ function applyResponseToDom(r){
 
 // init (code is first run, and this part only once)
 // list of initial requests to make
-//var initalRequests = ['chrome.inital','menu.get/top','menu.get/side'];
+var initalRequests = ['chrome.inital','menu.get/top','menu.get/side'];
 
 // do them:
 for(var i = 0; i< initalRequests.length; i++){
