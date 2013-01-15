@@ -11,11 +11,11 @@
 					<img src="../images/logo.jpg" />
 				</div>
 				<ul class="menu">
-					<li><a href="index.html">Hem</a></li>
-					<li><a href="about.html">Om oss</a></li>
-					<li><a href="products.html">Produkter</a></li>
-					<li><a href="contact.html">Kontakt</a></li>
-					<li><a href="profiles.html">Profilsida</a></li>
+					<li><a href="../html-mallar/index.html">Hem</a></li>
+					<li><a href="../html-mallar/about.html">Om oss</a></li>
+					<li><a href="../html-mallar/products.html">Produkter</a></li>
+					<li><a href="../html-mallar/contact.html">Kontakt</a></li>
+					<li><a href="../html-mallar/profiles.html">Profilsida</a></li>
 				</ul>
 				<p class="login">
 					You are logged in as, <strong>Darth Vader</strong>! <button>Logout</button>
