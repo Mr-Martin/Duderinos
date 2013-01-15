@@ -3,7 +3,7 @@
 	include_once('UserService.php');
 
 	// if button submit then check if user is in database and login
-	if(isset($_POST['submit'])) {
+	if(isset($_POST['login'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -18,7 +18,7 @@
 		<title>Membership</title>
 	</head>
 	<body>
-		<form method="post" action="">
+		<form method="post" action="?login">
 			Username: <input type="text" name="username" />
 			Password: <input type="text" name="password" />
 			<input type="submit" name="submit" value="Login" />

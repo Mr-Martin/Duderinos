@@ -16,10 +16,10 @@
 		public function login($username, $password) {
 
 			// if username and password is not empty then search for username and password and login.
-			if(!empty($user) && !empty($pass)) {
+			if(!empty($username) && !empty($password)) {
 				$st = $this->db->prepare("SELECT * FROM user WHERE userName=? AND password=?");
-				$st->bindParam(1, $user);
-				$st->bindParam(2, $pass);
+				$st->bindParam(1, $username);
+				$st->bindParam(2, $password);
 				$st->execute();
 
 				if($st->rowCount() == 1) {
@@ -30,8 +30,8 @@
 					}
 
 					$_SESSION['sess_id'] = $hashid;
-					$_SESSION['sess_user'] = $user; 
-					setcookie("user", $user);
+					$_SESSION['sess_user'] = $username; 
+					setcookie("user", $username);
 					// change to correct path
 					header("Location: profile.php");
 				} else {
