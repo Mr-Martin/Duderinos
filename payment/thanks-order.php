@@ -83,8 +83,8 @@ class setAmount extends dbConnect{
 				</div>
 
 				<div id="buyRight">
-<?php $setAmount = new setAmount(); ?>
-			</div>
+					<?php $setAmount = new setAmount(); ?>
+				</div>
 			</div>
 		</div>
 		<div id="footer">

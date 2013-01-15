@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12600\viewh14520\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Vi klick p\'e5 "k\'f6p" hamnar bes\'f6karen p\'e5 en ny sida d\'e4r hen kan fylla i sina kortuppgifter. Vid klick p\'e5 "bekr\'e4fta k\'f6p" justeras antalet produkter i databasen och priset p\'e5 produkten justeras enligt ber\'e4kningsmotorn.\
+\
+I fas 1 finns ingen varukorg - man kan bara handla en produkt i taget, men kan v\'e4lja att k\'f6pa flera ex av samma produkt.\
+\
+I fas 1 tas ingen h\'e4nsyn till om bes\'f6karen \'e4r inloggad eller ej. 
+\b Verifiera med gruppen
+\b0 .\
+\
+\
+K\'f6pfl\'f6det:\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}N\'e4r bes\'f6karen klickar p\'e5 "K\'f6p" skickas bes\'f6karen till en ny sida. \
+{\listtext	\'95	}Produktinfon skickas med POST/GET s\'e5 att en ny db-request kan g\'f6ras p\'e5 sj\'e4lva k\'f6p-sidan.\
+{\listtext	\'95	}K\'f6p sidan presenterar produktinfo och ett formul\'e4r.\
+{\listtext	\'95	}Formul\'e4ret inneh\'e5llet valbart antal, kortuppgifter och k\'f6par-info.\
+{\listtext	\'95	}Vid klick p\'e5 "Bekr\'e4fta k\'f6p" skickas antalet produkter och produktID till db och \'e4ndrar v\'e4rdet i db.\
+{\listtext	\'95	}"Bekr\'e4fta k\'f6p" ska ocks\'e5 trigga ig\'e5ng den funktion som justerar priset dynamiskt.\
+{\listtext	\'95	}Bes\'f6karen landar p\'e5 en ny sida med typ "Tack f\'f6r ditt k\'f6p. H\'e4r \'e4r en bekr\'e4ftelse"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+Skapa en funktion som kollar i querystringen vilken produktID som g\'e4ller. G\'f6r en query till SQL som h\'e4mtar all data som beh\'f6vs.\
+G\'f6r en query som kollar antalet produkter i databasen och l\'e4gg i en dropdownlista.\
+\
+"Bekr\'e4fta k\'f6p" skickar upp och \'e4ndrar antalet produkter i databasen och skickar bes\'f6karen till "Tack"-sida. Tack-sidan triggar funktionen som \'e4ndrar priset.\
+\
+}
