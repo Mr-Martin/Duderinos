@@ -18,7 +18,7 @@
 					<li><a href="profiles.html">Profilsida</a></li>
 				</ul>
 				<p class="login">
-					You are logged in as, <strong>Darth Vader</strong>!
+					You are logged in as, <strong>Darth Vader</strong> <button>Logout</button>!
 				</p>
 			</div>
 
