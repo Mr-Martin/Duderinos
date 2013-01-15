@@ -1,3 +1,134 @@
+<?php
+
+
+class dbConnect {
+  public $mysql;
+  	protected $db_host = 'localhost';
+  	protected $db_username = 'root';
+  	protected $db_password = 'root';
+  	protected $db_name = 'starwars_db';
+}
+
+
+class getID {
+//  	Kolla om GET finns - om inte skicka felmeddelande
+// 		Om GET finns - hämta productID
+	public function getID(){
+		if(!$_GET){
+		print '<script type="text/javascript">';
+		print 'alert("Du måste lägga något i varukorgen för att denna sidan ska funka. Prova Skriva ?ID=1 i URL-fältet")';
+		print '</script>'; 
+		}
+		else {
+			$productID = $_GET['ID'];
+			return $productID;
+		}
+	}
+}
+
+class getInfo extends dbConnect{
+//		Använd productID som argument till funktionen och sätt in i en mySQL-query
+// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn")
+
+public $name;
+
+public function getInfo($productID){
+	
+  	$db = mysqli_connect(
+		$this->db_host, //db
+		$this->db_username, //username
+		$this->db_password, //password
+		$this->db_name //dbname
+		);
+
+	$sql ="SELECT * FROM product WHERE productId=$productID";
+	
+	$res = mysqli_query($db, $sql);
+
+//		Sätt MySQL-svaren i variabler	
+	while ($row = mysqli_fetch_assoc($res))
+		{
+			$name = $row['productName'];
+			$manufactur = $row['productManufactur'];
+			$price = $row['productPrice'];
+			$stock = $row['productStock'];
+			$info = $row['productInfo'];
+			$amount = 1;
+			$image = $row['productImage'];
+		}
+	?>	
+	<div id="buyLeft">
+	<img src="../images/<?php echo $image; ?>" width="150px;" height="150px;"/>
+	<ul>
+		<li><strong><?php echo $price; ?></strong></li>
+		<li>Price:</li>
+	</ul>
+		<select id="buyAmount" name="buyamount">
+	        <option value="1">1 st</option>
+	        <option value="2">2 st</option>
+	        <option value="3">3 st</option>
+	        <option value="4">4 st</option>
+	        <option value="5">5 st</option>
+        </select> 
+		<button>Update</button>
+	<span>
+		<ul id="showCart">
+			<li><strong>Cart</strong></li>
+			<li>Item #1</li>
+			<?php
+			echo $name . "<br/>";
+			echo "<li>Price á: " . $price ." kr</li>";
+			echo "<li>Amount: ".$amount. " st</li>";
+			echo "<li>Total: ". $amount*$price ."kr</li>"; ?>
+		</ul>
+	</span>
+</div>
+<?php
+	}
+
+public function setForm($productID){
+	
+  	$db = mysqli_connect(
+		$this->db_host, //db
+		$this->db_username, //username
+		$this->db_password, //password
+		$this->db_name //dbname
+		);
+
+	$sql ="SELECT * FROM product WHERE productId=$productID";
+	
+	$res = mysqli_query($db, $sql);
+
+//		Sätt MySQL-svaren i variabler	
+	while ($row = mysqli_fetch_assoc($res))
+		{
+			$name = $row['productName'];
+			$manufactur = $row['productManufactur'];
+			$price = $row['productPrice'];
+			$stock = $row['productStock'];
+			$info = $row['productInfo'];
+			$amount = 1;
+			$image = $row['productImage'];
+		}
+	?>
+	<input id="ID" type="hidden" name="ID" value="<?php echo $productID ?>" autocomplete="off"></p>
+	<input id="amount" type="hidden" name="amount" value="<?php echo $amount ?>" autocomplete="off"></p>
+	<input id="name" type="hidden" name="name" value="<?php echo $name ?>" autocomplete="off"></p>
+	<input id="price" type="hidden" name="price" value="<?php echo $price ?>" autocomplete="off"></p>
+	<input id="stock" type="hidden" name="stock" value="<?php echo $stock ?>" autocomplete="off"></p>
+	<?php
+	}
+}
+
+$dbConnect = new dbConnect();
+$getID = new getID();
+$productID = $getID->getID();
+
+//$getInfo = new getInfo($productID);
+//$productInfo = $getInfo->getInfo($productID);
+
+?>
+
 <html>
 	<head>
 		<title>Produkter - Varukorg</title>
@@ -18,43 +149,20 @@
 					<li><a href="profiles.html">Profilsida</a></li>
 				</ul>
 				<p class="login">
-					You are logged in as, <strong>Darth Vader</strong>! <button>Logout</button>
+					You are logged in as, <strong>Darth Vader</strong>!
 				</p>
 			</div>
 
 			<div id="content">
 				<h1>Payment - Checkout</h1>
 
-				<div id="buyLeft">
-					<img src="<?php echo $image; ?>" width="150px;" height="150px;"/>
-					<ul>
-						<li><strong>Darth Vader</strong></li>
-						<li>Price:</li>
-						<select id="buyAmount" name="buyamount">
-					        <option value="1">1 st</option>
-					        <option value="2">2 st</option>
-					        <option value="3">3 st</option>
-					        <option value="4">4 st</option>
-					        <option value="5">5 st</option>
-				        </select> 
-						<button>Update</button>
-					</ul>
-					<span>
-					<ul id="showCart">
-						<li><strong>Cart</strong></li>
-						<li>Item #1</li>
-						<li>Price á: 1235 kr</li>
-						<li>Amount: 1 st</li>
-						<li>Total: 1235kr</li>
-					</ul>
-				</span>
-				</div>
+				<?php $getInfo = new getInfo($productID); ?>
 
 				<div id="buyRight">
 					<div class="buyBox">
 						
 			<!-- START OF PAYMENT -->
-					<form id="buy-form" method="post" action="">
+					<form id="buy-form" method="post" action="thanks-order.php">
 						<table>
 							<tr>
 								<td>
@@ -131,6 +239,11 @@
 									
 								</td>
 								<td>
+							
+<?php $productInfo = $getInfo->setForm($productID); ?>
+
+
+
 									<p><input type="submit" name="submit" id="buy-submit-btn" value="Place order"></p>
 								</td>
 							</tr>

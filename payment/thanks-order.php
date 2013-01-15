@@ -1,3 +1,56 @@
+<?php
+class dbConnect {
+  public $mysql;
+  	protected $db_host = 'localhost';
+  	protected $db_username = 'root';
+  	protected $db_password = 'root';
+  	protected $db_name = 'starwars_db';
+}
+
+class setAmount extends dbConnect{
+//		Använd productID som argument till funktionen och sätt in i en mySQL-query
+// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn")
+
+	public function setAmount(){
+		
+	  	$db = mysqli_connect(
+			$this->db_host, //db
+			$this->db_username, //username
+			$this->db_password, //password
+			$this->db_name //dbname
+			);
+
+		$productID = $_POST['ID'];
+		$productAmount = $_POST['amount'];
+		$productName = $_POST['name'];
+		$productPrice = $_POST['price'];
+		$productStock = $_POST['stock'];
+		
+		//Räkna ut hur många produkter som finns kvar
+		$productStock = $productStock - $productAmount;
+
+?>
+<div class="buyBox">			
+	<p><strong>Orderdetails:</strong></p>
+	<p><?php echo $productName . ", " . $productStock; ?> st<br />
+		Totalprice: <?php echo $productPrice ?> kr</p>
+	<p><strong>Sent to:</strong><br />
+		Test Testsson<br />
+		Stora vägen 99, Storstaden</p>
+	<p>Copy on the order is sent to: email@email.se</p>
+</div>	
+<?php
+
+// Justera antalet som är kvar
+//	$sql="INSERT INTO product (productStock) VALUES ($_POST['amount']-)";
+//	$res = mysqli_query($db, $sql);
+
+		echo $productAmount;
+	}
+}
+ 
+
+?>
 <html>
 	<head>
 		<title>Produkter - Varukorg</title>
@@ -30,17 +83,8 @@
 				</div>
 
 				<div id="buyRight">
-					<div class="buyBox">
-						
-						<p><strong>Orderdetails:</strong></p>
-						<p>Darth Vader, 1 st<br />
-							Totalprice: 1235 kr</p>
-						<p><strong>Sent to:</strong><br />
-							Test Testsson<br />
-							Stora vägen 99, Storstaden</p>
-						<p>Copy on the order is sent to: email@email.se</p>
-					</div>	
-				</div>
+<?php $setAmount = new setAmount(); ?>
+			</div>
 			</div>
 		</div>
 		<div id="footer">
