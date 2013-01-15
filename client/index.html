@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="sv">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>RESTful client</title>
+    <title>Hem</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+
     <script src="js/jquery.js"></script>
     <script src="js/client.js"></script>
     <script src="js/modules/auth.js"></script>
@@ -11,5 +12,37 @@
     <script src="js/modules/chrome.js"></script>
   </head>
   <body>
+    <div id="wrapper">
+      <div id="header">
+        <div class="logo">
+          <img src="../images/logo.jpg" />
+        </div>
+
+        <ul class="menu">
+          <li><a href="#page.home">Hem</a></li>
+          <li><a href="about.html">Om oss</a></li>
+          <li><a href="#page.products">Produkter</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="profiles.html">Profilsida</a></li>
+        </ul>
+
+        <form action="#" method="post" class="login">
+          <p>User: </p><input type="text" name="username" />
+          <p>Pass: </p><input type="text" name="password" />
+          <input type="submit" name="login" value="Login" />
+        </form>
+      </div>
+
+      <div id="content">
+        <!-- CONTENT HERE -->
+      </div>
+    </div>
+
+    <div id="empty"></div>
+
+    <div id="footer">
+      <p>&copy Duderinos</p>
+    </div>
   </body>
-</html> 
+</html>
+
