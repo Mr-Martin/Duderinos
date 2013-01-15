@@ -14,6 +14,7 @@
 
 		// function take two vars, if not empty select from database and return 1 row.
 		public function login($username, $password) {
+			private $max = 100000000000000;
 
 			// if username and password is not empty then search for username and password and login.
 			if(!empty($username) && !empty($password)) {
@@ -24,7 +25,7 @@
 
 				if($st->rowCount() == 1) {
 					// if correct login, set unic session cookie and goto
-					for($unicid=1; $unicid < 999999999; $unicid++) {
+					for($unicid=1; $unicid < $max; $unicid++) {
 						$hashid = md5($unicid);
 						return $hashid;
 					}
