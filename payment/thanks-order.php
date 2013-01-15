@@ -1,6 +1,7 @@
 <?php
 class dbConnect {
-  public $mysql;
+	//Denna class ska bytas ut mot en class som används på alla sidor
+	public $mysql;
   	protected $db_host = 'localhost';
   	protected $db_username = 'root';
   	protected $db_password = 'root';
@@ -9,7 +10,7 @@ class dbConnect {
 
 class setAmount extends dbConnect{
 //		Använd productID som argument till funktionen och sätt in i en mySQL-query
-// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn")
+// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn") <- Jag har inte kollat på den strängen, men vad jag förstår så ersätter den allt som står nedan till //**//
 
 	public function setAmount(){
 		
@@ -19,7 +20,9 @@ class setAmount extends dbConnect{
 			$this->db_password, //password
 			$this->db_name //dbname
 			);
+//**//
 
+	  	//Innehållet i POST kommer från payment/index.php
 		$productID = $_POST['ID'];
 		$productAmount = $_POST['amount'];
 		$productName = $_POST['name'];
@@ -29,7 +32,7 @@ class setAmount extends dbConnect{
 		//Räkna ut hur många produkter som finns kvar
 		$productStock = $productStock - $productAmount;
 
-?>
+// Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
 <div class="buyBox">			
 	<p><strong>Orderdetails:</strong></p>
 	<p><?php echo $productName . ", " . $productStock; ?> st<br />
@@ -41,11 +44,10 @@ class setAmount extends dbConnect{
 </div>	
 <?php
 
-// Justera antalet som är kvar
-//	$sql="INSERT INTO product (productStock) VALUES ($_POST['amount']-)";
-//	$res = mysqli_query($db, $sql);
-
-		echo $productAmount;
+// Justera antalet som är kvar i databasen. Detta är inte klart - här ska det göras en UPDATE i databasen så att rätt antal visas.
+	//	$sql="INSERT INTO product (productStock) VALUES ($_POST['amount']-)";
+	//	$res = mysqli_query($db, $sql);
+	//echo $productAmount;
 	}
 }
  

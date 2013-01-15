@@ -1,8 +1,8 @@
 <?php
 
-
+	//Denna class ska bytas ut mot en class som används på alla sidor
 class dbConnect {
-  public $mysql;
+  	public $mysql;
   	protected $db_host = 'localhost';
   	protected $db_username = 'root';
   	protected $db_password = 'root';
@@ -12,7 +12,7 @@ class dbConnect {
 
 class getID {
 //  	Kolla om GET finns - om inte skicka felmeddelande
-// 		Om GET finns - hämta productID
+// 		Om GET finns - returnera productID
 	public function getID(){
 		if(!$_GET){
 		print '<script type="text/javascript">';
@@ -28,9 +28,7 @@ class getID {
 
 class getInfo extends dbConnect{
 //		Använd productID som argument till funktionen och sätt in i en mySQL-query
-// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn")
-
-public $name;
+// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn") <- Jag har inte kollat på den strängen, men vad jag förstår så ersätter den allt som står nedan till //**//
 
 public function getInfo($productID){
 	
@@ -41,11 +39,13 @@ public function getInfo($productID){
 		$this->db_name //dbname
 		);
 
+// ** //
+
+//	Definierar SQL-frågan och utför den
 	$sql ="SELECT * FROM product WHERE productId=$productID";
-	
 	$res = mysqli_query($db, $sql);
 
-//		Sätt MySQL-svaren i variabler	
+//	Sätt MySQL-svaren i variabler	
 	while ($row = mysqli_fetch_assoc($res))
 		{
 			$name = $row['productName'];
@@ -56,7 +56,7 @@ public function getInfo($productID){
 			$amount = 1;
 			$image = $row['productImage'];
 		}
-	?>	
+// Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
 	<div id="buyLeft">
 	<img src="../images/<?php echo $image; ?>" width="150px;" height="150px;"/>
 	<ul>
@@ -99,7 +99,7 @@ public function setForm($productID){
 	
 	$res = mysqli_query($db, $sql);
 
-//		Sätt MySQL-svaren i variabler	
+//	Sätt MySQL-svaren i variabler	
 	while ($row = mysqli_fetch_assoc($res))
 		{
 			$name = $row['productName'];
@@ -110,7 +110,7 @@ public function setForm($productID){
 			$amount = 1;
 			$image = $row['productImage'];
 		}
-	?>
+// Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
 	<input id="ID" type="hidden" name="ID" value="<?php echo $productID ?>" autocomplete="off"></p>
 	<input id="amount" type="hidden" name="amount" value="<?php echo $amount ?>" autocomplete="off"></p>
 	<input id="name" type="hidden" name="name" value="<?php echo $name ?>" autocomplete="off"></p>
