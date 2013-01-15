@@ -32,10 +32,13 @@
 				<div id="buyRight">
 					<div class="buyBox">
 						
-						<p>Orderdetails:</p>
+						<p><strong>Orderdetails:</strong></p>
 						<p>Darth Vader, 1 st<br />
 							Totalprice: 1235 kr</p>
-
+						<p><strong>Sent to:</strong><br />
+							Test Testsson<br />
+							Stora vägen 99, Storstaden</p>
+						<p>Copy on the order is sent to: email@email.se</p>
 					</div>	
 				</div>
 			</div>
