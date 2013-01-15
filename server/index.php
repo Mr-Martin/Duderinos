@@ -5,8 +5,8 @@
 // client name space to class
 $idToClassMap = array(
   'auth' => 'AuthenticateController',
-  'test' => 'TestController',
   'product' => 'ProductController',
+  'page' => 'PageController',
   'menu' => 'MenuController',
   'chrome' => 'ChromeController'
 );
