@@ -1,18 +1,10 @@
 <?php
-
-	//Denna class ska bytas ut mot en class som används på alla sidor
-class dbConnect {
-  	public $mysql;
-  	protected $db_host = 'localhost';
-  	protected $db_username = 'root';
-  	protected $db_password = 'root';
-  	protected $db_name = 'starwars_db';
-}
-
+// database connection
+include('connection.php');
 
 class getID {
 //  	Kolla om GET finns - om inte skicka felmeddelande
-// 		Om GET finns - returnera productID
+// 		Om GET finns - hämta productID
 	public function getID(){
 		if(!$_GET){
 		print '<script type="text/javascript">';
@@ -26,27 +18,27 @@ class getID {
 	}
 }
 
-class getInfo extends dbConnect{
+class getInfo {
 //		Använd productID som argument till funktionen och sätt in i en mySQL-query
-// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn") <- Jag har inte kollat på den strängen, men vad jag förstår så ersätter den allt som står nedan till //**//
+// 		Så här skrev Benji: $info = $this->db->get("SELECT sql queryn")
+
+public $name;
+private $db;
+
+// do connection to database
+public function __construct() {
+	$this->db = new Connection();
+	$this->db = $this->db->dbConnect();
+}
 
 public function getInfo($productID){
 	
-  	$db = mysqli_connect(
-		$this->db_host, //db
-		$this->db_username, //username
-		$this->db_password, //password
-		$this->db_name //dbname
-		);
+	$res = $this->db->prepare("SELECT * FROM product WHERE productId=?");
+	$res->bindParam(1, $productID);
+	$res->execute();
 
-// ** //
-
-//	Definierar SQL-frågan och utför den
-	$sql ="SELECT * FROM product WHERE productId=$productID";
-	$res = mysqli_query($db, $sql);
-
-//	Sätt MySQL-svaren i variabler	
-	while ($row = mysqli_fetch_assoc($res))
+//		Sätt MySQL-svaren i variabler	
+	while ($row = $res->fetch(PDO::FETCH_ASSOC))
 		{
 			$name = $row['productName'];
 			$manufactur = $row['productManufactur'];
@@ -56,7 +48,7 @@ public function getInfo($productID){
 			$amount = 1;
 			$image = $row['productImage'];
 		}
-// Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
+	?>	
 	<div id="buyLeft">
 	<img src="../images/<?php echo $image; ?>" width="150px;" height="150px;"/>
 	<ul>
@@ -85,22 +77,14 @@ public function getInfo($productID){
 </div>
 <?php
 	}
-
 public function setForm($productID){
-	
-  	$db = mysqli_connect(
-		$this->db_host, //db
-		$this->db_username, //username
-		$this->db_password, //password
-		$this->db_name //dbname
-		);
 
-	$sql ="SELECT * FROM product WHERE productId=$productID";
-	
-	$res = mysqli_query($db, $sql);
+	$res = $this->db->prepare("SELECT * FROM product WHERE productId=?");
+	$res->bindParam(1, $productID);
+	$res->execute();
 
-//	Sätt MySQL-svaren i variabler	
-	while ($row = mysqli_fetch_assoc($res))
+	//	Sätt MySQL-svaren i variabler	
+	while ($row = $res->fetch(PDO::FETCH_ASSOC))
 		{
 			$name = $row['productName'];
 			$manufactur = $row['productManufactur'];
@@ -110,7 +94,7 @@ public function setForm($productID){
 			$amount = 1;
 			$image = $row['productImage'];
 		}
-// Här nere skriver vi ut alla HTML taggar som sen innehåller dynamiskt PHP-innehåll. ?>
+	?>
 	<input id="ID" type="hidden" name="ID" value="<?php echo $productID ?>" autocomplete="off"></p>
 	<input id="amount" type="hidden" name="amount" value="<?php echo $amount ?>" autocomplete="off"></p>
 	<input id="name" type="hidden" name="name" value="<?php echo $name ?>" autocomplete="off"></p>
@@ -120,13 +104,11 @@ public function setForm($productID){
 	}
 }
 
-$dbConnect = new dbConnect();
 $getID = new getID();
 $productID = $getID->getID();
 
 //$getInfo = new getInfo($productID);
 //$productInfo = $getInfo->getInfo($productID);
-
 ?>
 
 <html>
@@ -167,11 +149,11 @@ $productID = $getID->getID();
 							<tr>
 								<td>
 									<p>First Name: <br />
-			        				<input class="text" id="firstName" name="firstName" spellcheck="false"></p>
+			        				<input class="text" id="first-name" name="firstname" spellcheck="false"></p>
 								</td>
 								<td>
 									<p>Last Name: <br />
-				        			<input class="text" id="lastName" name="lastName" spellcheck="false"></p>
+				        			<input class="text" id="last-name" name="lastname" spellcheck="false"></p>
 								</td>
 							</tr>
 			        		<tr>
@@ -240,9 +222,7 @@ $productID = $getID->getID();
 								</td>
 								<td>
 							
-<?php $productInfo = $getInfo->setForm($productID); ?>
-
-
+									<?php $productInfo = $getInfo->setForm($productID); ?>
 
 									<p><input type="submit" name="submit" id="buy-submit-btn" value="Place order"></p>
 								</td>
