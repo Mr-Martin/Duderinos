@@ -1,6 +1,6 @@
 <?php
 
-class NewsController extends BaseController{
+class ProductController extends BaseController{
 
   protected $map = array(
     'list' => 
@@ -12,19 +12,19 @@ class NewsController extends BaseController{
 
   protected function getModel(){
     if(!$this->model){
-      $this->model = new NewsModel;
+      $this->model = new ProductModel;
     }
     return $this->model;
   }
 
   public function showList(){
     $model = $this->getModel();
-    $data = $model->getNewsList();
+    $data = $model->getProductList();
     $this->setToResponse(
-      'news.list', 
+      'product.list', 
         array(
           'selector' => '#content',
-          'html' => $this->dressDataWithTemplate('news.list', $data)
+          'html' => $this->dressDataWithTemplate('product.list', $data)
         )
     );
   }

@@ -1,7 +1,7 @@
 
-// News module
+// Product module
 
-modules.news = function(){
+modules.product = function(){
 
   var list = function(args){
     $(args.selector).html(args.html);

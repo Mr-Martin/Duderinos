@@ -4,7 +4,7 @@
 modules.menu = function(){
 
   var get = function(args){
-    $('#menu').html(args.html);
+    $('.menu').html(args.html);
   }
 
   return {

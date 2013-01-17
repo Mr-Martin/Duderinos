@@ -1,16 +1,19 @@
 <?php
+error_reporting(0);
+
 
 // client name space to class
 $idToClassMap = array(
   'auth' => 'AuthenticateController',
-  'news' => 'NewsController',
+  'home' => 'HomeController',
+  'product' => 'ProductController',
   'menu' => 'MenuController',
   'chrome' => 'ChromeController',
   'profile' => 'ProfileController'
 );
 
 // relative server path 
-define('BASE_PATH','RESTful_client_server/server_wu/');
+define('BASE_PATH','Duderinos/server_wu/');
 
 // which directories have classes?
 define('CLASS_DIRS','library/db, library/handlers, controllers, models');

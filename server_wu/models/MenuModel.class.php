@@ -5,20 +5,20 @@ class MenuModel extends BaseModel{
   private $menuData = array(
     'items' => array(
       array(
-        'href' => '#news',
-        'text' => 'what\'s going on'
+        'href' => '#home',
+        'text' => 'Hem'
       ),
       array(
-        'href' => '#movies/family',
-        'text' => 'family movies'
+        'href' => '#about',
+        'text' => 'Om oss'
       ),
       array(
-        'href' => '#movies/action',
-        'text' => 'action movies'
+        'href' => '#product',
+        'text' => 'Produkter'
       ),
       array(
         'href' => '#contact',
-        'text' => 'contact'
+        'text' => 'Kontakt'
       )
     )
   );
