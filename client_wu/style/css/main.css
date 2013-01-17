@@ -1,0 +1,48 @@
+
+/* design elements */
+*{margin:0;padding:0;}
+html,body{height:100%;}
+body{margin:0px;padding:0px;background:#789;font-family:"ff-enzo-web-1","ff-enzo-web-2",Arial,sans-serif;font-size:14px;line-height:17px;} /*font-size:14px;line-height:16px;*/
+#main{position:absolute;left:50%;margin:0px 0px 0px -390px;padding:0px;width:780px;height:100%;background:#def;}
+#menu{width:285px;height:100%;left:0px;top:0px;position:absolute;margin:0px;padding:0px;background:#123;text-transform:uppercase;letter-spacing:0.5em;font-weight:400;text-align:right;font-size:11px;line-height:28px;} /*font-size:9px;line-height:28px;*/
+#menuspacer{display:block;width:285px;height:112px;}
+.menuitem, .menuitem_sel, .menuemptyitem{display:block;margin-right:0em;color:#def;text-decoration:none;}
+.menuitem:hover{background:#def;color:#123;}
+.menuitem_sel{background:#def;color:#123;}
+
+#right{width:495px;height:99%;left:285px;top:0px;position:absolute;margin:0px;padding:0px;}
+#inscroll{width:495px;height:99%;overflow:auto;margin:0px;padding:0px;}
+#contentwidth{width:466px;}
+#contentspacer{display:block;width:466px;height:12px;}
+#wu{margin-left:-30px;margin-top:-5px;position:absolute;z-index:5;border:0;}
+/* contentainers */
+.box{width:450px;border:1px solid #fff;margin:0 0 14px 14px;text-align:left;}
+.box p, .box table{margin:10px 10px;}
+.box h1, .box h2, .box h3{margin:0px 10px;}
+/* content style */
+#main{}
+.box img{float:right;padding:3px 0px 2px 8px;border:0;}
+h1{text-align:left;font-size:1.63em;line-height:1.1em;margin-bottom:2em;} /*font-size:1.15em;*/
+h2{text-align:left;font-size:1.05em;}
+h3{text-align:left;font-size:1em;}
+br.break{position:relative;left:0;right:0;clear:both;width:100%;display:block;}
+
+/*table presentation*/
+table.presentation{background:#000;color:#fff;}
+table.presentation h1, table.presentation h2{text-align:center;}
+table.presentation td{padding:5px;vertical-align:top;border:1px solid white;}
+
+/*form*/
+form{margin:5px 14px 14px 14px;}
+input, select{margin:0 0 0 3px;border:1px solid #ddd;background:#fff;font-size:0.95em;}
+label{color:#93a9b8;font-size:0.95em;text-align:left;}
+#formcontainer{width:290px;line-height:12px;}
+#formcontainer label{margin-top:6px;margin-bottom:2px;color:#000;}
+#formcontainer input, #formcontainer textarea{margin-left:0;width:300px;height:18px;border:1px solid black;margin-bottom:9px;}
+#formcontainer textarea{height:100px;}
+.inputsubmit{border:0;font-weight:bold;background:none;color:#000;padding-bottom:2px;width:38px;cursor:pointer;}
+.inputsubmit:hover{color:#fff;background:#123;}
+#formcontainer .inputcheckbox{width:16px;height:16px;margin:-5px 7px 0px 0;}
+
+/*unfocus*/
+:link:focus, :visited:focus, :active:focus {-moz-outline:0px;}
