@@ -19,6 +19,10 @@ class MenuModel extends BaseModel{
       array(
         'href' => '#contact',
         'text' => 'Kontakt'
+      ),
+      array(
+        'href' => '#profile',
+        'text' => 'Min profil'
       )
     )
   );

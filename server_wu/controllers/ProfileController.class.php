@@ -3,33 +3,28 @@
 class ProfileController extends BaseController{
 
   protected $map = array(
-    'form' => 
-      array('getForm' => 
+    'list' => 
+      array('showList' => 
         array(
         )
-    ),
-    'submit' => 
-      array('submitForm' =>
-        array(
-        )
-    )
+    ) 
   );
 
-  public function getForm(){
-    $this->setToResponse(
-      'profile.form', 
-        array(
-          'selector' => '#profileForm',
-          'html' => $this->dressDataWithTemplate('profile.form')
-        )
-    );
+  protected function getModel(){
+    if(!$this->model){
+      $this->model = new ProfileModel;
+    }
+    return $this->model;
   }
 
-  public function submitForm(){
+  public function showList(){
+    $model = $this->getModel();
+    $data = $model->getProfileList();
     $this->setToResponse(
-      'profile.submit',
+      'profile.list', 
         array(
-          'postData' => $_POST
+          'selector' => '#content',
+          'html' => $this->dressDataWithTemplate('profile.list', $data)
         )
     );
   }
