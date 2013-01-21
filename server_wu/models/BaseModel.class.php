@@ -7,7 +7,7 @@ class BaseModel{
 
   function BaseModel(){
     $this->handleSession();
-    $this->db = new Db("localhost","root","","RESTexampleDB");
+    $this->db = new Db("localhost","root","","starwars_db");
     if ($this->db->connect_errno) {
         printf("Connect failed: %s\n", $this->db->connect_error);
         exit();
