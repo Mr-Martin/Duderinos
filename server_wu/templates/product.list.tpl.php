@@ -1,8 +1,9 @@
+<h1><?php print('Choose your products Luke... Phaaaaah <br><br>'); ?></h1>
 <ul id="left">
 
 </ul>
 
-<h1><?php print($title); ?></h1>
+
 
 <div id="right">
 	<?php 
@@ -10,7 +11,7 @@ foreach($products as $prodItems){
   extract($prodItems);
   ?>
 	<div class="prodBox">
-		<img src="images/<?php print($image); ?>" alt="<?php print($title); ?>" width="150px;" height="150px;"/>
+		<img src="images/<?php print($productImage); ?>" alt="<?php print($productName); ?>" width="150px;" height="150px;"/>
 
 		<ul class="prodBoxInfo">
 			<form>
@@ -18,8 +19,8 @@ foreach($products as $prodItems){
 				<input type="hidden" name="item_price" value="1235">
 				<input type="hidden" name="item_id" value="DV-01">
 				<li name="prodName"><strong><?php print($productName); ?></strong></li>
-				<li><a href="#"><?php print($prodCat); ?></a></li>
-				<li name="prodPrice">Pris: <?php print($prodPrice); ?>:-</li>
+				<li><a href="#"><?php print($productManufactur); ?></a></li>
+				<li name="prodPrice">Pris: <?php print($productPrice); ?>:-</li>
 				<input type="submit" name="buySubmit" class="buy-btn" value="Köp">
 			</form>
 		</ul>
