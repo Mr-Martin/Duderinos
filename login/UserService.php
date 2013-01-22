@@ -29,10 +29,10 @@
 						$hashid = md5($unicid);
 						return $hashid;
 					}
-
+					
+					session_start();
 					$_SESSION['sess_id'] = $hashid;
 					$_SESSION['sess_user'] = $username; 
-					setcookie("user", $username);
 					// change to correct path
 					header("Location: profile.php");
 				} else {
