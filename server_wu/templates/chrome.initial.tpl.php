@@ -25,4 +25,3 @@
     <div id="footer">
       <p>&copy Duderinos</p>
     </div>
-
