@@ -12,6 +12,11 @@ class ProductController extends BaseController{
       array('showMenu' => 
         array(
         )
+    ),
+    'page' => 
+      array('showPage' => 
+        array(
+        )
     ) 
   );
 
@@ -28,7 +33,7 @@ class ProductController extends BaseController{
     $this->setToResponse(
       'product.list', 
         array(
-          'selector' => '#content',
+          'selector' => '#right',
           'html' => $this->dressDataWithTemplate('product.list', $data)
         )
     );
@@ -42,6 +47,16 @@ class ProductController extends BaseController{
         array(
           'selector' => '#left',
           'html' => $this->dressDataWithTemplate('product.menu', $data)
+        )
+    );
+  }
+
+  public function showPage(){
+    $this->setToResponse(
+      'product.page', 
+        array(
+          'selector' => '#content',
+          'html' => $this->dressDataWithTemplate('product.page')
         )
     );
   }

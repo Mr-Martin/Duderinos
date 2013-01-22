@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1><?php print('Choose your products Luke... Phaaaaah <br><br>'); ?></h1>
 <ul id="left">
 
@@ -7,6 +8,9 @@
 
 <div id="right">
 	<?php 
+=======
+<?php 
+>>>>>>> Updates
 foreach($products as $prodItems){ 
   extract($prodItems);
   ?>
@@ -29,6 +33,5 @@ foreach($products as $prodItems){
 
 		<button class="more-info-btn">Mer info</button>
 	</div>
-	
-	<?php } ?>
-</div>
+<?php } ?>
+
