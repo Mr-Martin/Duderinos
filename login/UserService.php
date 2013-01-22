@@ -29,12 +29,13 @@
 						$hashid = md5($unicid);
 						return $hashid;
 					}
-					
+
 					session_start();
 					$_SESSION['sess_id'] = $hashid;
-					$_SESSION['sess_user'] = $username; 
+					$_SESSION['sess_user'] = $username;
+					$_SESSION['date'] = date("y-m-d"); 
 					// change to correct path
-					header("Location: profile.php");
+					header("Location: #profile");
 				} else {
 					// if NOT correct username & password show
 					echo 'Incorrect username or password';
