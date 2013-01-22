@@ -7,6 +7,11 @@ class ProductController extends BaseController{
       array('showList' => 
         array(
         )
+    ),
+    'menu' => 
+      array('showMenu' => 
+        array(
+        )
     ) 
   );
 
@@ -25,6 +30,18 @@ class ProductController extends BaseController{
         array(
           'selector' => '#content',
           'html' => $this->dressDataWithTemplate('product.list', $data)
+        )
+    );
+  }
+
+  public function showMenu(){
+    $model = $this->getModel();
+    $data = $model->getProductMenu();
+    $this->setToResponse(
+      'product.menu', 
+        array(
+          'selector' => '#left',
+          'html' => $this->dressDataWithTemplate('product.menu', $data)
         )
     );
   }

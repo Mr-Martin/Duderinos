@@ -1,18 +1,8 @@
+<ul id="left">
 
+</ul>
 
 <h1><?php print($title); ?></h1>
-
-<div id="left">
-	<ul>
-		<li><a href="#">Samlarfigurer</a></li>
-		<li><a href="#">Böcker och tidningar</a></li>
-		<li><a href="#">Utrustning</a></li>
-		<li><a href="#">Planscher och Konst</a></li>
-		<li><a href="#">Spel</a></li>
-		<li><a href="#">Kläder och Accessoarer</a></li>
-		<li><a href="#">Leksaker</a></li>
-	</ul>
-</div>
 
 <div id="right">
 	<?php 

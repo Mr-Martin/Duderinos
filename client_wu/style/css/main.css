@@ -86,15 +86,14 @@ p { float: left; }
 #content #left {
 	float: left;
 	width: 249px;
-	margin: 10px 25px 0px 0px;
+	margin: 20px 25px 0px 0px;
 	padding-right: 25px;
 	border-right: 1px dotted #ccc;
 	height: 100%;
 }
 
-#content #left ul { margin-top: 10px; }
-#content #left ul li:hover { background: #f4f4f4; cursor: pointer; }
-#content #left ul li {
+#content #left li:hover { background: #f4f4f4; cursor: pointer; }
+#content #left li {
 	height: 40px;
 	display: block;
 	border-bottom: 1px dotted #ccc;

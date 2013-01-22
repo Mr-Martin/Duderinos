@@ -59,7 +59,7 @@ function getResponse(e, nonHashRequest){
       crossDomain : false,
       url : getUrl()
     })
-    .done(function(r) { 
+    .done(function(r) {
       applyResponse(r);
     })
     .fail(function() { 
