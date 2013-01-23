@@ -6,12 +6,11 @@
 
 						<!-- <ul class="profileBoxLabels"> -->
 						<ul>
-							<li><strong>Nickname</strong>: <?php echo $userName; ?></li>
+							<li><strong>Nickname</strong>: <strong><?php echo $userName; ?></strong></li>
 							<li><strong>Status</strong>: <?php echo $status; ?></li>
 							<li><strong>Gender</strong>: <?php echo $gender; ?></li>
 							<li><strong>Age</strong>: <?php echo $age; ?></li>
 							<li><strong>Nationality</strong>: <?php echo $nationality; ?></li>
-							<li><button onclick="javascript:">Change password</button></li>
 							
 						</ul>
 
