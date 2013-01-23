@@ -1,5 +1,7 @@
 <?php
-error_reporting(0);
+error_reporting(E_ALL^E_NOTICE^E_WARNING^E_STRICT);
+// SETTINGS Error reporting som blivit strikt i php5.
+//error_reporting(0);
 
 
 // client name space to class
@@ -9,7 +11,8 @@ $idToClassMap = array(
   'product' => 'ProductController',
   'menu' => 'MenuController',
   'chrome' => 'ChromeController',
-  'profile' => 'ProfileController'
+  'profile' => 'ProfileController',
+  'about'=> 'AboutController'
 );
 
 // relative server path 
