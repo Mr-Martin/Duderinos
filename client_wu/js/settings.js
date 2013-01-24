@@ -2,7 +2,7 @@
 settings = {
 
   // path to server
-  basePath: '/gitHub/Duderinos/server_wu/',
+  basePath: '/Skola_objectphp/Gruppuppgift2_Duderinos/Duderinos/server_wu/',
 
   // what do we want to get when we first load?
   initalRequests: ['chrome.inital','menu.get','home.list'],
@@ -11,7 +11,6 @@ settings = {
   hashMap: {
     'home': 'home.list',
     'product': 'product.list',
-    'profile': 'profile.list',
-	  'about': 'about.list'
+    'profile': 'profile.list'
   }
 };

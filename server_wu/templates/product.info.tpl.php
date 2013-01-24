@@ -25,8 +25,9 @@ foreach($products as $prodItems){
 		</ul>
 
 		<p><?php print($text); ?></p>
-
-		<button class="more-info-btn" data-id="<?php print($productName); ?>">Mer info</button>
+		<form >
+		<button class="more-info-btn" submit="<?php  ?>">Mer info</button>
+		<input type="hidden" name=""
 	</div>
 	
 	<?php } ?>

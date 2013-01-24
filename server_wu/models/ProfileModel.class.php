@@ -2,26 +2,19 @@
 
 class ProfileModel extends BaseModel{
 
-  // get username from user session (calling function from Auth..Model.class)
-  $this->username = getUser($user);
-  return $this->username;
+  private $listData = array(
+        'nickName' => "Darth Vader",
+        'profileName' => "Simon Quick",
+        'profileDesc' => "Happy guy, 25 years young. Likes computers, joltcola and Star Wars. My favourite is Han Solo because he's so handsome... eh I mean ... hes so cool.",
+        'profileImage' => "img.jpg",
+        'nickStatus' => "Bronze",
+        'nickGender' => "Male",
+        'nickNat' => "Swedish",
+        'nickAge' => "95"
+  );
 
-  private $listData;
-
-  // get profile from database with right username
-  protected function getProfileListData($user){
-    $rows = $this->db->get("SELECT userName, userimage, fullName, status, age, nationality, about FROM user WHERE userName = '$username'");
-    if(count($rows)>0){
-      return $rows[0];
-    }
-    return array();
+  public function getProfileList(){
+    return $this->listData;
   }
-
-  public function getProfileList($user){     
-      if(!$this->listData){
-        $this->listData = $this->getProfileListData($user);
-      }
-      return $this->listData;
-    }
 
 }

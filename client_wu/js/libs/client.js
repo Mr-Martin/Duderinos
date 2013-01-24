@@ -34,7 +34,7 @@ function Module(path, args){
   }
 }
 
-function getResponse(e, nonHashRequest, callback){
+function getResponse(e, nonHashRequest){
 
   var applyResponse = function(r){
     var m = {};
@@ -61,7 +61,6 @@ function getResponse(e, nonHashRequest, callback){
     })
     .done(function(r) {
       applyResponse(r);
-      callback();
     })
     .fail(function() { 
       alert("error"); 
