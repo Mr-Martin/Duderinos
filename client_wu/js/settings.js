@@ -12,6 +12,7 @@ settings = {
     'home': 'home.list',
     'product': 'product.list',
     'product/info': 'product.info',
-    'profile': 'profile.list'
+    'profile': 'profile.list',
+    'login': 'auth.login'
   }
 };

@@ -32,7 +32,7 @@ class AuthenticateController extends BaseController{
     $user = $model->loginUser($username, $password);
     $this->setToResponse(
       'auth.login', 
-        $user // this is really an object, but an assoc array or an object here is fine, json likes both and would have converted the assoc array into an object anyway
+        $user
     );
   }
 
