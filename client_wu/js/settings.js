@@ -13,6 +13,8 @@ settings = {
     'product': 'product.list',
     'product/info': 'product.info',
     'profile': 'profile.list',
-    'login': 'auth.login'
+    'login': 'auth.login',
+    'about': 'about.list',
+    'contact': 'contact.list'
   }
 };
