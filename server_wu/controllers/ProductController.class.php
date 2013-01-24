@@ -17,7 +17,12 @@ class ProductController extends BaseController{
       array('showProdInfo' =>
         array(
           )
+        ),
+    'page' => 
+      array('showPage' => 
+        array(
         )
+    ) 
   );
 
   protected function getModel(){
@@ -33,7 +38,7 @@ class ProductController extends BaseController{
     $this->setToResponse(
       'product.list', 
         array(
-          'selector' => '#content',
+          'selector' => '#right',
           'html' => $this->dressDataWithTemplate('product.list', $data)
         )
     );
@@ -51,8 +56,6 @@ class ProductController extends BaseController{
     );
   }
 
-
-
 public function showProdInfo(){
     $model = $this->getModel();
     $data = $model->getProductInfo();
@@ -61,6 +64,16 @@ public function showProdInfo(){
         array(
           'selector' => '#right',
           'html' => $this->dressDataWithTemplate('product.info', $data)
+        )
+    );
+  }
+
+  public function showPage(){
+    $this->setToResponse(
+      'product.page', 
+        array(
+          'selector' => '#content',
+          'html' => $this->dressDataWithTemplate('product.page')
         )
     );
   }

@@ -6,7 +6,7 @@ class ProductModel extends BaseModel{
   private $menuListData;
 
   protected function getProductListData(){
-    return array("products"=>$this->db->get("SELECT * FROM product"));
+    return array("products"=>$this->db->get("SELECT p.*, c.categoryName FROM product p INNER JOIN category c ON p.categoryID = c.categoryID"));
   }
 
   public function getProductList(){

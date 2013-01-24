@@ -1,12 +1,5 @@
-<h1><?php print('<br>Choose your products'); ?></h1>
-
-<ul id="left">
-
-</ul>
-
-<div id="right">
-	<?php 
-foreach($products as $prodItems){ 
+<?php 
+	foreach($products as $prodItems){ 
   extract($prodItems);
   ?>
 	<div class="prodBox">
@@ -18,7 +11,7 @@ foreach($products as $prodItems){
 				<input type="hidden" name="item_price" value="1235">
 				<input type="hidden" name="item_id" value="DV-01">
 				<li name="prodName"><strong><?php print($productName); ?></strong></li>
-				<li><a href="#"><?php print($prodManufactur); ?></a></li>
+				<li name="catName"><a href="#"><?php print($categoryName); ?></a></li>
 				<li name="prodPrice">Pris: <?php print($productPrice); ?>:-</li>
 				<input type="submit" name="buySubmit" class="buy-btn" value="Köp">
 			</form>
