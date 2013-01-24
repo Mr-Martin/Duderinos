@@ -4,11 +4,11 @@
 modules.auth = function(){
 
   var login = function(args){
-    $('#header').html(args.firstname + ' ' + args.lastname + ' logged in');
+    $('#header').html(args.fullname + ' logged in');
   }
   var user = function(args){
-    if(args && args.firstname && args.lastname){
-      $('#header').html(args.firstname + ' ' + args.lastname + ' is the logged in user');
+    if(args && args.fullname){
+      $('#header').html(args.fullname + ' is the logged in user');
     }else{
       $('#header').html('no user');
     }

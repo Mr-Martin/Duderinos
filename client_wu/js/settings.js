@@ -2,7 +2,7 @@
 settings = {
 
   // path to server
-  basePath: '/Duderinos/server_wu/',
+  basePath: '/gitHub/Duderinos/server_wu/',
 
   // what do we want to get when we first load?
   initalRequests: ['chrome.inital','menu.get','home.list'],
@@ -12,6 +12,6 @@ settings = {
     'home': 'home.list',
     'product': 'product.list',
     'profile': 'profile.list',
-	'about': 'about.list'
+	  'about': 'about.list'
   }
 };
