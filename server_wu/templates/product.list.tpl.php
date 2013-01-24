@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-<h1><?php print('Choose your products Luke... Phaaaaah <br><br>'); ?></h1>
-<ul id="left">
-
-</ul>
-
-
-
-<div id="right">
-	<?php 
-=======
-<?php 
->>>>>>> Updates
-foreach($products as $prodItems){ 
-  extract($prodItems);
+<?php
+	foreach($products as $prodItems){ 
+  	extract($prodItems);
   ?>
 	<div class="prodBox">
 		<img src="images/<?php print($productImage); ?>" alt="<?php print($productName); ?>" width="150px;" height="150px;"/>

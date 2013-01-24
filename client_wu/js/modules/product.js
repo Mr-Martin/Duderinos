@@ -3,10 +3,6 @@
 
 modules.product = function(){
 
-  var callList = function(){
-    getResponse(null, "product.menu");
-  }
-
   var list = function(args){
     callChrome(function(){
       $(args.selector).html(args.html);
