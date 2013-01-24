@@ -6,6 +6,7 @@ class ProfileController extends BaseController{
     'list' => 
       array('showList' => 
         array(
+          'user' => null
         )
     ) 
   );
@@ -17,9 +18,9 @@ class ProfileController extends BaseController{
     return $this->model;
   }
 
-  public function showList(){
+  public function showList($user){
     $model = $this->getModel();
-    $data = $model->getProfileList();
+    $data = $model->getProfileList($user);
     $this->setToResponse(
       'profile.list', 
         array(
