@@ -23,7 +23,7 @@ modules.product = function(){
   	callInfo();
   }
  $(".more-info-btn").live("click", function(){
-  	document.location.hash="product.info/" + $(this).attr("data-id");
+  	document.location.hash="product/info/" + $(this).attr("data-id");
   });
   return {
     list: list,

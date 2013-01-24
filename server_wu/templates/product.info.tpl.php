@@ -1,11 +1,4 @@
-<h1><?php print('<br>Choose your products'); ?></h1>
-
-<ul id="left">
-
-</ul>
-
-<div id="right">
-	<?php 
+<?php 
 foreach($products as $prodItems){ 
   extract($prodItems);
   ?>
@@ -25,9 +18,7 @@ foreach($products as $prodItems){
 		</ul>
 
 		<p><?php print($text); ?></p>
-		<form >
 		<button class="more-info-btn" submit="<?php  ?>">Mer info</button>
-		<input type="hidden" name=""
 	</div>
 	
 	<?php } ?>
