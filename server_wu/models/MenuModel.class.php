@@ -13,7 +13,7 @@ class MenuModel extends BaseModel{
         'text' => 'Om oss'
       ),
       array(
-        'href' => '#product.list',
+        'href' => '#product',
         'text' => 'Produkter'
       ),
       array(
