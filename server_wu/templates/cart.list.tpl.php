@@ -1,4 +1,6 @@
 <?php
+echo "Hello";
+/*
 	if($item['item_id'] && $item['item_price'] && $item['item_desc']){
 		echo '<li>';
 		echo $item['productName'] . '<br />';
@@ -8,3 +10,4 @@
 	} else {
 		echo 'Cart empty';
 	}
+*/

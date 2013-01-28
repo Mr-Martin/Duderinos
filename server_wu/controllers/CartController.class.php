@@ -22,9 +22,10 @@ class CartController extends BaseController{
     $data = $model->getCartData();
     $html = $this->dressDataWithTemplate('cart.list', $data);
     $this->setToResponse(
-      'cart.get', 
+      'cart', 
         array(
-          'html' => $html
+          'selector' => '#cartbasket',
+          'html' => $this->dressDataWithTemplate('cart.list', $data)
         )
     );
   }

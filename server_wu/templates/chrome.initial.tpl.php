@@ -8,6 +8,10 @@
 
         </ul>
 
+        <ul id="cartbasket">
+    
+        </ul>
+        
         <form action="#" method="post" class="login" id="userlogin">
           <p>User: </p><input type="text" name="username" />
           <p>Pass: </p><input type="text" name="password" />
@@ -24,9 +28,4 @@
 
     <div id="footer">
       <p>&copy Duderinos</p>
-        <div id="basket">
-          <ul id="cartbasket">
-    
-          </ul>
-        </div>
     </div>

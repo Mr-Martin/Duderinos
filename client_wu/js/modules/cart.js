@@ -8,6 +8,6 @@ modules.cart = function(){
   }
 
   return {
-    get: get
+    list: list
   }
 }
