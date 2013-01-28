@@ -14,6 +14,7 @@ settings = {
     'profile': 'profile.list',
     'login': 'auth.login',
     'about': 'about.list',
-    'contact': 'contact.list'
+    'contact': 'contact.list',
+    'cart': 'cart.list'
   }
 };

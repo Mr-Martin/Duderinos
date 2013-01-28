@@ -7,13 +7,13 @@
 
 		<ul class="prodBoxInfo">
 			<form>
-				<input type="hidden" name="item_desc" value="Darth Vader">
-				<input type="hidden" name="item_price" value="1235">
-				<input type="hidden" name="item_id" value="DV-01">
+				<input type="hidden" name="item_desc" value="<?php print($productName); ?>">
+				<input type="hidden" name="item_price" value="<?php print($productPrice); ?>">
+				<input type="hidden" name="item_id" value="<?php print($productID); ?>">
 				<li name="prodName"><strong><?php print($productName); ?></strong></li>
 				<li name="catName"><a href="#"><?php print($categoryName); ?></a></li>
 				<li name="prodPrice">Pris: <?php print($productPrice); ?>:-</li>
-				<input type="submit" name="buySubmit" class="buy-btn" value="Köp" data-id="<?php print($productID); ?>">
+				<input type="submit" name="buySubmit" class="buy-btn" value="Köp">
 			</form>
 		</ul>
 

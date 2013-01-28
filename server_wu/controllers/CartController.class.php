@@ -20,7 +20,7 @@ class CartController extends BaseController{
   public function getCart(){
     $model = $this->getModel();
     $data = $model->getCartData();
-    $html = $this->dressDataWithTemplate('cart', $data);
+    $html = $this->dressDataWithTemplate('cart.list', $data);
     $this->setToResponse(
       'cart.get', 
         array(
