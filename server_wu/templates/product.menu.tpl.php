@@ -3,5 +3,5 @@
 	foreach($categories as $category){ 
 	  extract($category);
 	  
-	 	print('<li><a class="menuitem" data-id="' . $categoryName . '">' . $categoryName . '</a></li>');
+	 	print('<li><a class="menuitem" >' . $categoryName . '</a></li>');
 	} ?>

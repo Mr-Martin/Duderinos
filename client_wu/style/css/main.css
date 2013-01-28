@@ -53,19 +53,8 @@ p { float: left; }
 	border-bottom: 1px dotted #ccc;
 }
 
-#content .prodBox img { margin: 10px 10px 10px 0px; float: left; }
-
-#content .singleProdBox {
-	float: left;
-	width: 500px;
-}
-
-#content .prodBox p,
-#content .prodBox .prodInfo {
-	float: none;
-	padding: 10px;
-	text-align: justify;
-}
+#content .prodBox img { margin: 10px 10px 10px 0px; }
+#content .prodBox p { float: none; padding: 7px; }
 
 #content .prodBox .prodBoxInfo {
 	height: 30px;
@@ -79,25 +68,20 @@ p { float: left; }
 
 #content .prodBox .prodBoxInfo li {
 	float: left;
-	margin-right: 15px;
+	margin-right: 25px;
 }
 
-#content .more-info-btn,
-#content .back-btn {
+#content .more-info-btn {
 	width: 100px;
 	height: 30px;
-	margin-left: 8px;
 }
 
 #content .buy-btn {
 	float: right;
-	width: 100px;
-	height: 30px;
+	width: 50px;
+	height: 25px;
+	margin-top: 2px;
 	margin-right: 10px;
-}
-
-#content .buy {
-	float: right;
 }
 
 #content #left {
@@ -121,6 +105,16 @@ p { float: left; }
 #content #right { float: right; width: 680px; }
 
 /* END PRODUCTS */
+
+
+/* CART BASKET */
+
+#header #basket {
+	float: right;
+	background-color: #CCC;
+}
+
+/* END CART BASKET */
 
 
 /* PROFILES */

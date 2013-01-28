@@ -10,9 +10,11 @@ settings = {
   // mapped hashes (so we can have nicer/simpler hash names than our system names)
   hashMap: {
     'home': 'home.list',
+    'product': 'product.list',
     'profile': 'profile.list',
     'login': 'auth.login',
     'about': 'about.list',
-    'contact': 'contact.list'
+    'contact': 'contact.list',
+    'cart': 'cart.list'
   }
 };
