@@ -5,9 +5,9 @@ class CartModel extends BaseModel{
   private $cartData = array(
     'items' => array(
       array(
-        'productID' => "Item#1",
-        'productName' => "",
-        'productPrice' => ""
+        'productName' => $_GET['item_desc'],
+        'productPrice' => $_GET['item_price'],
+        'productID' => $_GET['item_id']
       )
     )
   );

@@ -13,7 +13,7 @@
 				<li name="prodName"><strong><?php print($productName); ?></strong></li>
 				<li name="catName"><a href="#"><?php print($categoryName); ?></a></li>
 				<li name="prodPrice">Pris: <?php print($productPrice); ?>:-</li>
-				<input type="submit" name="buySubmit" class="buy-btn" value="Köp">
+				<input type="submit" name="buySubmit" class="buy-btn" value="Köp" data-id="<?php print($productID); ?>">
 			</form>
 		</ul>
 
