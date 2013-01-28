@@ -22,13 +22,13 @@ class ProductModel extends BaseModel{
 
 
   // product.info
-  protected function getProductInfoData(){
-    return array("products"=>$this->db->get("SELECT p.*, c.categoryName FROM product p INNER JOIN category c ON p.categoryID = c.categoryID WHERE p.productID = 1"));
+  protected function getProductInfoData($id){
+    return array("products"=>$this->db->get("SELECT p.*, c.categoryName FROM product p INNER JOIN category c ON p.categoryID = c.categoryID WHERE p.productID = $id"));
   }
 
-  public function getProductInfo(){
+  public function getProductInfo($id){
     if(!$this->infoData){
-      $this->infoData = $this->getProductInfoData();
+      $this->infoData = $this->getProductInfoData($id);
     }
     
     return $this->infoData;

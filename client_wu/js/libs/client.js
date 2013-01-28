@@ -80,13 +80,13 @@ function getHash(){
     return hash;
   }
 
-  var findAndSelectLinks = function(hash){
+  /*var findAndSelectLinks = function(hash){
     $('a').removeClass('menuitem_sel');
     $('a[href=#' + hash + ']').addClass('menuitem_sel');
-  }
+  }*/
 
   var hash = decodeURIComponent(document.location.hash.replace('#',''));
-  findAndSelectLinks(hash);
+  //findAndSelectLinks(hash);
   return mapHash(hash);
 }
 

@@ -4,7 +4,8 @@
 modules.auth = function(){
 
   var login = function(args){
-    $('#header').html(args.fullname + ' logged in');
+    //alert(args.fullname + ' logged in');
+    $('#header').append(args.fullname + ' logged in');
   }
   var user = function(args){
     if(args && args.fullname){

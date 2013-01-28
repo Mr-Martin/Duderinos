@@ -39,7 +39,7 @@ modules.product = function(){
   }
 
   $(".more-info-btn").live("click", function(){
-    document.location.hash="info";// + $(this).attr("data-id");
+    document.location.hash="product.info/" + $(this).attr("data-id");
   });
 
   return {

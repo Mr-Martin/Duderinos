@@ -16,6 +16,7 @@ class ProductController extends BaseController{
     'info' =>
       array('showInfo' =>
         array(
+          'id' => null
         )
     ),
     'page' => 
@@ -44,9 +45,9 @@ class ProductController extends BaseController{
     );
   }
 
-  public function showInfo(){
+  public function showInfo($id){
     $model = $this->getModel();
-    $data = $model->getProductInfo();
+    $data = $model->getProductInfo($id);
     $this->setToResponse(
       'product.info', 
         array(
