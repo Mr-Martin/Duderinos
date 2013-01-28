@@ -6,8 +6,11 @@ modules.product = function(){
     $(args.selector).html(args.html);
   }
 
-  var callList = function(){
-    getResponse(null, "product.list");
+  var info = function(args){
+    callChrome(function(){
+      $(args.selector).html(args.html);
+    });
+    callMenu(); 
   }
 
   var list = function(args){
@@ -35,19 +38,15 @@ modules.product = function(){
     }
   }
 
-  var info = function(args){
-    $(args.selector).html(args.html);
-    callInfo();
-  }
-
-  var callInfo = function(){
-    getResponse(null, "product.info");
-  }
+  $(".more-info-btn").live("click", function(){
+    document.location.hash="info";// + $(this).attr("data-id");
+  });
 
   return {
     list: list,
+    info: info,
     menu: menu,
-    page: page,
-    info: info
+    page: page
+    
   }
 }

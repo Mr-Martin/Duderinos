@@ -13,11 +13,11 @@ class ProductController extends BaseController{
         array(
         )
     ),
-      'info' =>
-      array('showProdInfo' =>
+    'info' =>
+      array('showInfo' =>
         array(
-          )
-        ),
+        )
+    ),
     'page' => 
       array('showPage' => 
         array(
@@ -44,6 +44,18 @@ class ProductController extends BaseController{
     );
   }
 
+  public function showInfo(){
+    $model = $this->getModel();
+    $data = $model->getProductInfo();
+    $this->setToResponse(
+      'product.info', 
+        array(
+          'selector' => '#right',
+          'html' => $this->dressDataWithTemplate('product.info', $data)
+        )
+    );
+  }
+
   public function showMenu(){
     $model = $this->getModel();
     $data = $model->getProductMenu();
@@ -52,18 +64,6 @@ class ProductController extends BaseController{
         array(
           'selector' => '#left',
           'html' => $this->dressDataWithTemplate('product.menu', $data)
-        )
-    );
-  }
-
-public function showProdInfo(){
-    $model = $this->getModel();
-    $data = $model->getProductInfo();
-    $this->setToResponse(
-      'product.info', 
-        array(
-          'selector' => '#right',
-          'html' => $this->dressDataWithTemplate('product.info', $data)
         )
     );
   }

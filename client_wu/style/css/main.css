@@ -1,5 +1,6 @@
 * { margin: 0px; padding: 0px; text-decoration: none; list-style: none; font-family: Cambria; }
 
+body { overflow-y: scroll; }
 a { color: #111; }
 a:active{ color: #999; }
 h1 { float: left; width: 100%; }

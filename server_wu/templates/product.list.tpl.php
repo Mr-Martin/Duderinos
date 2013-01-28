@@ -19,7 +19,7 @@
 
 		<p><?php print($text); ?></p>
 
-		<button class="more-info-btn" data-id="<?php print($productName); ?>">Mer info</button>
+		<button class="more-info-btn" data-id="<?php print($productID); ?>">Mer info</button>
 	</div>
 	
 	<?php } ?>

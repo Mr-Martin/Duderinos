@@ -11,7 +11,7 @@ settings = {
   hashMap: {
     'home': 'home.list',
     'product': 'product.list',
-    'product/info': 'product.info',
+    'info': 'product.info',
     'profile': 'profile.list',
     'login': 'auth.login',
     'about': 'about.list',
