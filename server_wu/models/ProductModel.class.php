@@ -7,13 +7,13 @@ class ProductModel extends BaseModel{
   private $menuListData;
 
   // product.list
-  protected function getProductListData(){
-    return array("products"=>$this->db->get("SELECT p.*, c.categoryName FROM product p INNER JOIN category c ON p.categoryID = c.categoryID"));
+  protected function getProductListData($cat){
+    return array("products"=>$this->db->get("SELECT p.*, c.categoryName FROM product p INNER JOIN category c ON p.categoryID = c.categoryID WHERE c.categoryName = '$cat'"));
   }
 
-  public function getProductList(){
+  public function getProductList($cat){
     if(!$this->listData){
-      $this->listData = $this->getProductListData();
+      $this->listData = $this->getProductListData($cat);
     }
     
     return $this->listData;

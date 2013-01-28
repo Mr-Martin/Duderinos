@@ -38,8 +38,25 @@ modules.product = function(){
     }
   }
 
+  $(".menuitem").live("click", function(){
+    document.location.hash="product.list/" + $(this).attr("data-id");
+  });
+
   $(".more-info-btn").live("click", function(){
     document.location.hash="product.info/" + $(this).attr("data-id");
+  });
+
+  $(".back-btn").live("click", function(){
+    document.location.hash="product";
+  });
+
+  var prodText;
+
+  $(".prodInfo").each(function(){
+    prodText = $(this).text();
+    var str = prodText.substr(0,270);
+
+    $(this).html(str + '...');
   });
 
   return {
