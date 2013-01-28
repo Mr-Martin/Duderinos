@@ -8,10 +8,6 @@
 
         </ul>
 
-        <ul id="cartbasket">
-    
-        </ul>
-        
         <form action="#" method="post" class="login" id="userlogin">
           <p>User: </p><input type="text" name="username" />
           <p>Pass: </p><input type="text" name="password" />
