@@ -2,7 +2,7 @@
 
 class CartModel extends BaseModel{
 
-  private $cartData = array(
+  private $cartData = htmlspecialchars(array(
     'items' => array(
       array(
         'productName' => $_GET['item_desc'],
@@ -10,7 +10,7 @@ class CartModel extends BaseModel{
         'productID' => $_GET['item_id']
       )
     )
-  );
+  ));
 
   public function getCartList(){
     return $this->cartData;

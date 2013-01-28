@@ -107,6 +107,16 @@ p { float: left; }
 /* END PRODUCTS */
 
 
+/* CART BASKET */
+
+#header #basket {
+	float: right;
+	background-color: #CCC;
+}
+
+/* END CART BASKET */
+
+
 /* PROFILES */
 #content #profile { float: left; width: 900px; }
 

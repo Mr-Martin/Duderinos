@@ -8,6 +8,12 @@
 
         </ul>
 
+        <div id="basket">
+          <ul id="cartbasket">
+    
+          </ul>
+        </div>
+
         <form action="#" method="post" class="login" id="userlogin">
           <p>User: </p><input type="text" name="username" />
           <p>Pass: </p><input type="text" name="password" />
