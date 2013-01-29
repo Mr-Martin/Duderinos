@@ -55,7 +55,7 @@ function getResponse(e, nonHashRequest, callback){
 
   var jqxhr = $.ajax({ 
       format : 'json',
-      type : "GET",
+      type : "POST",
       crossDomain : false,
       url : getUrl()
     })

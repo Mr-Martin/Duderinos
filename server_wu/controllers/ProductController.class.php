@@ -6,6 +6,7 @@ class ProductController extends BaseController{
     'list' => 
       array('showList' => 
         array(
+          'cat' => ''
         )
     ),
     'menu' => 
@@ -33,9 +34,9 @@ class ProductController extends BaseController{
     return $this->model;
   }
 
-  public function showList(){
+  public function showList($cat){
     $model = $this->getModel();
-    $data = $model->getProductList();
+    $data = $model->getProductList($cat);
     $this->setToResponse(
       'product.list', 
         array(

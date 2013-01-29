@@ -10,8 +10,7 @@ $idToClassMap = array(
   'menu' => 'MenuController',
   'chrome' => 'ChromeController',
   'profile' => 'ProfileController',
-  'about' => 'AboutController',
-  'cart' => 'CartController'
+  'about' => 'AboutController'
 );
 
 // relative server path 
