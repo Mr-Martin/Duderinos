@@ -6,23 +6,23 @@ class MenuModel extends BaseModel{
     'items' => array(
       array(
         'href' => '#home',
-        'text' => 'Hem'
+        'text' => 'Home'
       ),
       array(
         'href' => '#about',
-        'text' => 'Om oss'
+        'text' => 'About'
       ),
       array(
         'href' => '#product.list',
-        'text' => 'Produkter'
+        'text' => 'Products'
       ),
       array(
         'href' => '#contact',
-        'text' => 'Kontakt'
+        'text' => 'Contact'
       ),
       array(
         'href' => '#profile',
-        'text' => 'Min profil'
+        'text' => 'My profile'
       )
     )
   );
