@@ -11,6 +11,7 @@
 							<li><strong>Gender</strong>: <?php echo $gender; ?></li>
 							<li><strong>Age</strong>: <?php echo $age; ?></li>
 							<li><strong>Nationality</strong>: <?php echo $nationality; ?></li>
+							<li><strong>Your Wallet</strong>: <?php echo $wallet; ?> kr</li>
 							
 						</ul>
 

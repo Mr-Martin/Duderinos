@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Värd: localhost
--- Skapad: 11 feb 2013 kl 13:32
--- Serverversion: 5.5.24-log
--- PHP-version: 5.3.13
+-- Värd: 127.0.0.1
+-- Skapad: 11 feb 2013 kl 14:49
+-- Serverversion: 5.5.27
+-- PHP-version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -159,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `age` tinyint(4) NOT NULL,
   `nationality` varchar(50) NOT NULL,
   `about` longtext NOT NULL,
+  `wallet` float NOT NULL DEFAULT '1000',
   PRIMARY KEY (`userID`),
   KEY `imageID` (`userimage`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
@@ -167,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumpning av Data i tabell `user`
 --
 
-INSERT INTO `user` (`userID`, `userName`, `password`, `userimage`, `fullName`, `status`, `gender`, `age`, `nationality`, `about`) VALUES
-(1, 'Duderino', 'Duderino', 'userImages/duderino.jpg', 'Simon Quick', 'admin', 'male', 14, 'Swedish', '<p>Hello Sith and Jedis!</p>\r\n<p>My name is Simon and I am 14 Alderaan spins (if 1 spin on Alderaan is like 1 spin on Earth. I''m not sure"</p>\r\n<p>I love Star Wars and Leias golden bikinii make me feel funny in my private places</p>'),
-(2, 'customer', 'customer', 'userImages/customer.jpg', 'Leia Organa Solo', 'silver', 'female', 22, 'Alderaan', '<p>Leia Organa Solo (born Leia Amidala Skywalker) was, at various stages of her life, a politician, revolutionary, and Jedi Knight of the New Jedi Order.</p>\r\n<p>The daughter of Jedi Knight Anakin Skywalker and Senator Padmé Amidala of Naboo, Leia was the younger twin sister of Luke Skywalker, and, shortly after her birth, she became the adopted daughter of Bail Organa and Queen Breha of Alderaan, making her a Princess of Alderaan. An accomplished Senator, Organa Solo was most famous for her strong leadership during the Galactic Civil War and other subsequent galactic conflicts, making her one of the galaxy''s greatest heroes. Later she married Han Solo, and became the mother of their three children: Jaina, Jacen, and Anakin Solo. Around the start of the Swarm War, Leia unknowingly became a grandmother through Jacen''s daughter Allana.</p> ');
+INSERT INTO `user` (`userID`, `userName`, `password`, `userimage`, `fullName`, `status`, `gender`, `age`, `nationality`, `about`, `wallet`) VALUES
+(1, 'Duderino', 'Duderino', 'userImages/duderino.jpg', 'Simon Quick', 'admin', 'male', 14, 'Swedish', '<p>Hello Sith and Jedis!</p>\r\n<p>My name is Simon and I am 14 Alderaan spins (if 1 spin on Alderaan is like 1 spin on Earth. I''m not sure"</p>\r\n<p>I love Star Wars and Leias golden bikinii make me feel funny in my private places</p>', 1000),
+(2, 'customer', 'customer', 'userImages/customer.jpg', 'Leia Organa Solo', 'silver', 'female', 22, 'Alderaan', '<p>Leia Organa Solo (born Leia Amidala Skywalker) was, at various stages of her life, a politician, revolutionary, and Jedi Knight of the New Jedi Order.</p>\r\n<p>The daughter of Jedi Knight Anakin Skywalker and Senator Padmé Amidala of Naboo, Leia was the younger twin sister of Luke Skywalker, and, shortly after her birth, she became the adopted daughter of Bail Organa and Queen Breha of Alderaan, making her a Princess of Alderaan. An accomplished Senator, Organa Solo was most famous for her strong leadership during the Galactic Civil War and other subsequent galactic conflicts, making her one of the galaxy''s greatest heroes. Later she married Han Solo, and became the mother of their three children: Jaina, Jacen, and Anakin Solo. Around the start of the Swarm War, Leia unknowingly became a grandmother through Jacen''s daughter Allana.</p> ', 1000);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

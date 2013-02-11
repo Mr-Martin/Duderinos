@@ -6,7 +6,7 @@ class ProfileModel extends BaseModel{
 
   // get profile from database with right username
   protected function getProfileListData($user){
-    $rows = $this->db->get("SELECT userName, userimage, fullName, status, age, nationality, about FROM user WHERE userName = 'Duderino'");
+    $rows = $this->db->get("SELECT userName, userimage, fullName, status, age, nationality, about, wallet FROM user WHERE userName = 'Duderino'");
     if(count($rows)>0){
       return $rows[0];
     }
