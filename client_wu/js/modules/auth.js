@@ -17,6 +17,7 @@ modules.auth = function(){
   var logout = function(){
     $('#header').html('user logged out');
   }
+
   return {
     login: login,
     user: user,

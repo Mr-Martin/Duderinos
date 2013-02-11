@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Värd: localhost
--- Skapad: 14 jan 2013 kl 10:41
--- Serverversion: 5.5.25
--- PHP-version: 5.4.4
+-- Skapad: 11 feb 2013 kl 13:32
+-- Serverversion: 5.5.24-log
+-- PHP-version: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Tabellstruktur `category`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(50) NOT NULL,
   `categoryimage` varchar(100) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`categoryID`, `categoryName`, `categoryimage`) VALUES
 (1, 'LEGO', 'images/categoryImages/LEGO.jpg'),
-(2, 'Fx Lightsabers', 'images/categoryImages/fxLightsabers.jpg');
+(2, 'Lightsabers', 'images/categoryImages/fxLightsabers.jpg');
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ INSERT INTO `category` (`categoryID`, `categoryName`, `categoryimage`) VALUES
 -- Tabellstruktur `image`
 --
 
-CREATE TABLE `image` (
+CREATE TABLE IF NOT EXISTS `image` (
   `imageID` int(11) NOT NULL AUTO_INCREMENT,
   `imageName` varchar(50) NOT NULL,
   `imagePath` varchar(100) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `image` (
 -- Tabellstruktur `page`
 --
 
-CREATE TABLE `page` (
+CREATE TABLE IF NOT EXISTS `page` (
   `pageID` int(11) NOT NULL AUTO_INCREMENT,
   `pageTitle` varchar(70) NOT NULL,
   `pageContent` longtext NOT NULL,
@@ -90,7 +90,7 @@ INSERT INTO `page` (`pageID`, `pageTitle`, `pageContent`, `pageImage`, `pageType
 -- Tabellstruktur `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `product` (
   `productID` int(11) NOT NULL AUTO_INCREMENT,
   `productName` varchar(50) NOT NULL,
   `productManufactur` varchar(50) NOT NULL,
@@ -112,10 +112,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`productID`, `productName`, `productManufactur`, `productCondition`, `productPrice`, `productInfo`, `productModel`, `productStock`, `productDate`, `productImage`, `categoryID`) VALUES
-(1, 'LEGO Star Wars - Death Star 10188', 'LEGO', 'New', 499, '<p>NOTE - This product ships only to the USA - Orders placed with shipping addresses outside the USA will be cancelled.</p>\r\n<p>\r\n3803 pieces<br />\r\nAges 14+<br />\r\nBattle inside the Death Star™!<br />\r\n</p>\r\n<p>Recreate the action and adventure of the Star Wars™ movies with the ultimate Death Star playset! This amazingly detailed battle station features an incredible array of minifigure-scale scenes, moving parts, characters and accessories from Episodes IV and VI on its multiple decks, including the Death Star control room, rotating turbolaser turrets, hangar bay with TIE Advanced starfighter, tractor beam controls, Emperor’s throne room, detention block, firing laser cannon, Imperial conference chamber, droid maintenance facility, and the powerful Death Star superlaser…plus much more! Swing across the chasm with Luke and Leia, face danger in the crushing trash compactor, and duel with Darth Vader for the fate of the galaxy!<p>\r\n\r\n<ul>\r\n<li>* Includes 24 minifigures and droids, plus all-new Dianoga™ trash compactor monster!</li>\r\n<li>* Includes 6 new and exclusive minifigures and droids only found in this set: Luke Skywalker™ (Stormtrooper™ outfit), Han Solo™ (Stormtrooper outfit), Assassin Droid™, Interrogation Droid, Death Star Droid and 2 Death Star Troopers™!</li>\r\n<li>* Also includes Luke Skywalker, Han Solo, Obi-Wan Kenobi™, C-3PO™, R2-D2™, Princess Leia™, Chewbacca™, Luke Skywalker (Jedi Knight), Darth Vader™, Grand Moff Tarkin™, Emperor Palpatine™, 2 Stormtroopers, 2 Emperor''s Royal Guards™, R2-Q5™, and mouse droid!.</li>\r\n<li>Movie-authentic Death Star environments include the Superlaser control room and target monitor, Imperial conference chamber, TIE Advanced hangar bay with moving launch rack, Emperor''s throne room, droid maintenance room, detention block, trash compactor, and much more!</li>\r\n<li>Rescue Princess Leia from the detention block cell, then escape through the secret hatch to the trash compactor below!</li>\r\n<li>Reenact the final duel between Luke Skywalker and Darth Vader in the Emperor''s Throne Room!</li>\r\n<li>Death Star measures 16” (41cm) tall and 16½” (42cm) wide!</li>\r\n<li>TIE Advanced measures 3½" (9cm) wide!</li>\r\n</ul>\r\n\r\n<p>Product Number: LGO10306<br>\r\nShipping Weight: 24.96 pounds</p>', 'LEGO Star Wars - Death Star 10188', 2, '2013-01-12 00:00:00', 'produtImages/LEGO/LGO10306.jpg', 1),
-(2, 'LEGO Star Wars - Malevolence 9515', 'LEGO', 'Standard', 119, '<p>NOTE - This product ships only to the USA - Orders placed with shipping addresses outside the USA will be cancelled.</p>\r\n\r\n<p>Product Number: LGO10579<br>\r\nShipping Weight: 5.40 pounds</p>\r\n\r\n<p>This item is in Standard Grade Condition:<br />\r\nThe item is brand new, in mint condition, and sealed inside its packaging.<br />\r\nPackaging condition is verified to be 80% mint (C8) or better.<br />\r\nStandard Grade items are suitable to display in the package, or to open.</p>', 'LEGO Star Wars - Malevolence 9515', 1, '2013-01-10 00:00:00', 'productImages/LEGO/LGO10579.jpg', 1),
-(3, 'FX Lightsaber with Removable Blade - Luke Skywalke', 'Hasbro', 'Bad', 119, '<p>Product Number: HAS20038<br />\r\nShipping Weight: 4.12 pounds</p>\r\n\r\n<p>This item is in Standard Grade Condition:<br />\r\nThe item is brand new, in mint condition, and sealed inside its packaging.<br />\r\nPackaging condition is verified to be 80% mint (C8) or better.<br />\r\nStandard Grade items are suitable to display in the package, or to open.</p>\r\n', 'Luke Skywalker (Blue)', 0, '2013-01-07 00:00:00', 'productImages/fxLightsabers/HAS20038.jpg', 2),
-(4, 'FX Lightsaber with Removable Blade - Darth Vader', 'Hasbro', 'New', 119, '<p>The FX Lightsaber with Removable Blade: Darth Vader version features a removable polycarbonate blade with igniting/glowing with LED-powered power-up and power-down lights effects, and motion sensor controlled sound effects---power-up, power-down, idle, movement, and clash---digitally recorded from the movie. The Darth Vader FX Lightsaber requires, but does not include, batteries, and is accompanied by a display stand. Requiring substantial strength and dexterity, the lightsaber, once a ceremonial weapon, was utilized primarily by the likes of Jedi and Sith warriors. Whereas lightsaber hilts were tailored according to wielders’ preference, the blade itself was comprised of plasma energy bound by a force containment field. Sustained by a mechanized life support system and prosthetics, the battered and disfigured Sith Lord Darth Vader is both the apprentice and enforcer of Emperor Palpatine, however, his Imperial caseload is compromised by his desire to capture and recruit his offspring Luke Skywalker. Initially caught off-guard by Luke’s willing surrender to the Imperials as a gesture intended to prompt the redemption of Anakin Skywalker, Vader dueled against his son while the cackling Palpatine eagerly looked on.</p>\r\n\r\n<p>Product Number: HAS18784<br />\r\nShipping Weight: 5.00 pounds </p>', 'Darth Vader', 2, '2013-01-01 00:00:00', 'productImages/fxLightsabers/HAS18784.jpg', 2);
+(1, 'Death Star 10188', 'LEGO', 'New', 499, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accums</p>', 'LEGO Star Wars - Death Star 10188', 2, '2013-01-12 00:00:00', 'productImages/LEGO/LGO10306.jpg', 1),
+(2, 'Malevolence 9515', 'LEGO', 'Standard', 119, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accums</p>', 'LEGO Star Wars - Malevolence 9515', 1, '2013-01-10 00:00:00', 'productImages/LEGO/LGO10579.jpg', 1),
+(3, 'Lightsaber with Removable Blade', 'Hasbro', 'Bad', 119, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accums</p>', 'Luke Skywalker (Blue)', 0, '2013-01-07 00:00:00', 'productImages/fxLightsabers/HAS20038.jpg', 2),
+(4, 'Lightsaber with Removable Blade', 'Hasbro', 'New', 119, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accums</p>', 'Darth Vader', 2, '2013-01-01 00:00:00', 'productImages/fxLightsabers/HAS18784.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ INSERT INTO `product` (`productID`, `productName`, `productManufactur`, `product
 -- Tabellstruktur `productcategory`
 --
 
-CREATE TABLE `productcategory` (
+CREATE TABLE IF NOT EXISTS `productcategory` (
   `produtCategoryID` int(11) NOT NULL AUTO_INCREMENT,
   `productID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
@@ -148,7 +148,7 @@ INSERT INTO `productcategory` (`produtCategoryID`, `productID`, `categoryID`) VA
 -- Tabellstruktur `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `userName` varchar(50) NOT NULL,
   `password` varchar(128) NOT NULL,

@@ -16,7 +16,7 @@ p { float: left; }
 
 #header { float: left; width: 980px; height: auto; }
 #header input { float: left; width: 100px; margin-left: 5px; margin-right: 5px; }
-#header .login { float: right; }
+#header #loginForm { float: right; }
 
 #header .logo { width: 150px; margin: 0px auto; }
 #header .logo img { width: 150px; }
@@ -51,6 +51,7 @@ p { float: left; }
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 	border-bottom: 1px dotted #ccc;
+	display: none;
 }
 
 #content .prodBox img { margin: 10px 10px 10px 0px; float: left; }
@@ -116,6 +117,10 @@ p { float: left; }
 	border-bottom: 1px dotted #ccc;
 	line-height: 40px;
 	padding-left: 10px;
+}
+
+#content #left .menuitem {
+	display: block;
 }
 
 #content #right { float: right; width: 680px; }

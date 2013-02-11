@@ -1,4 +1,4 @@
-<h1>LUKE!</h1>
+<h1>Luke.... phaaaa... Choose your products!</h1>
 
 <ul id="left">
 

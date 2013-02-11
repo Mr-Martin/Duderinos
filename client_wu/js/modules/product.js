@@ -47,7 +47,7 @@ modules.product = function(){
   });
 
   $(".back-btn").live("click", function(){
-    document.location.hash="product";
+    document.location.hash="product.list";
   });
 
   var prodText;
@@ -58,6 +58,8 @@ modules.product = function(){
 
     $(this).html(str + '...');
   });
+
+  $('.prodBox').fadeIn();
 
   return {
     list: list,
