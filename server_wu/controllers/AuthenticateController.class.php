@@ -27,7 +27,10 @@ class AuthenticateController extends BaseController{
     return $this->model;
   }
 
-  public function login($username, $password){
+  public function login(){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
     $model = $this->getModel();
     $user = $model->loginUser($username, $password);
     $this->setToResponse(

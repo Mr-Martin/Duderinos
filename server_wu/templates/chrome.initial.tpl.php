@@ -9,11 +9,11 @@
 
         </ul>
 
-        <div id="loginForm">
-          <p>User: </p><input type="text" name="username" id="user" value=""/>
-          <p>Pass: </p><input type="password" name="password" id="pass" value=""/>
-          <button id="login">Logga in</button>
-        </div>
+        <form method="post" id="loginForm">
+          <p>User: </p><input type="text" name="username" id="username" value=""/>
+          <p>Pass: </p><input type="password" name="password" id="password" value=""/>
+          <input type="submit" id="login" value="Logga in" />
+        </form>
       </div>
 
       <div id="content">
