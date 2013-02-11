@@ -28,6 +28,4 @@ class ContactController extends BaseController{
         )
     );
   }
-
-
 }
