@@ -1,6 +1,7 @@
     <div id="wrapper">
       
       <div id="header">
+        <div id="userinfo"></div>
         <div class="logo">
           <img src="images/logo.jpg" />
         </div>
